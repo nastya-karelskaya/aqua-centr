@@ -1,0 +1,14 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.picture {
+  background: url("../img/index/header-bg.jpeg") center no-repeat;
+  height: 560px;
+}
+
+.advantages-item__wrapper {
+  background: url("../img/index/adv-center") center no-repeat;
+}
+/*# sourceMappingURL=styles.css.map */

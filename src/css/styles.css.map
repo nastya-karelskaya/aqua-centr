@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "mappings": "AEAA,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAU;CAAG;;AEA3B,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,kCAAkC,CAAC,MAAM,CAAC,SAAS;EAC/D,MAAM,EAAE,KAAK;CAAG;;AGDb,AAAD,yBAAU,CAAC;EACT,UAAU,EAAE,8BAA8B,CAAC,MAAM,CAAC,SAAS;CAAG",
+    "sources": [
+        "styles.sass",
+        "variables.sass",
+        "normalize.sass",
+        "_common.sass",
+        "_picture.sass",
+        "_products.sass",
+        "_services.sass",
+        "_advantages.sass",
+        "_order.sass",
+        "_about.sass"
+    ],
+    "names": [],
+    "file": "styles.css"
+}
