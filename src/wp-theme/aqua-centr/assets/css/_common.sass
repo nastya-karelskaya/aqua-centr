@@ -1,0 +1,373 @@
+.header 
+  &-top 
+    background-color: $marine
+    color: $white
+    font-family: RobotoMono-Bold, sans-serif
+    font-size: 14px
+    padding: 10px
+    box-shadow: 0 0 12px rgba(0,0,0,0.1)
+    &__wrapper 
+      display: flex
+      flex-direction: row 
+      justify-content: space-between
+      align-items: center
+
+    &__phones
+      display: inline-block
+      margin-top: 10px
+      .phone
+        &-icon 
+
+          display: inline-block
+          // float: left
+          img
+            width: 17px
+            margin-bottom: 25px
+          
+
+        &-txt 
+          display: inline-block
+          margin-left: 8px
+          a 
+            color: $white
+            display: block
+
+          
+        
+
+    &__mail
+      display: inline-block
+      .mail
+        &-icon 
+          display: inline-block
+          // float: left
+          img
+            width: 17px
+        
+        &-txt
+          display: inline-block
+          margin-left: 8px
+          color: $white
+        a 
+          color: $white
+
+    &__time 
+      display: inline-block
+      .time
+        &-icon 
+          display: inline-block
+          // float: left
+          img
+            width: 17px
+        
+        &-txt
+          display: inline
+          margin-left: 8px
+          a 
+            color: $white
+  
+    &__map
+      display: inline-block
+      margin-top: 10px
+
+      .map
+        &-icon 
+          display: inline-block
+          // float: left
+          img
+            width: 17px
+            margin-bottom: 25px
+        
+        &-txt
+          display: inline-block
+          margin-left: 8px
+          line-height: 18px
+          a 
+            color: $white
+
+    &__search
+      margin-top: 5px
+      input.search-input 
+        height: 50px
+        border: 2px solid $white
+        border-radius: 50px
+        background-color: transparent
+        width: 100%
+        font-size: 14px
+        padding-left: 30px
+        color: $white
+        position: relative
+        &::placeholder  /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: $white
+          opacity: 1
+
+      div 
+        input 
+          border: none
+          position: absolute
+          right: 40px
+          top: 17px
+          height: 27px
+          width: 25px
+          background: url(../img/header/search.png) center no-repeat
+          padding: 0
+
+        
+      img
+        
+
+  &-nav
+    box-shadow: 0 0 12px rgba(0,0,0,0.1)
+    padding: 20px 0px 20px 0px
+    position: relative
+
+    .navbar
+      padding-right: 0
+      padding-left: 0
+      &-collapse
+        margin-top: 7px
+      &-nav
+        width: 100%
+
+      &-nav  
+        width: 100%
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        margin-bottom: 0
+
+        li  
+          list-style: none
+          margin-left: 10px
+          //padding-left: 10px
+          a 
+            font-size: 22px
+            font-family: Arial, serif
+            text-transform: uppercase
+            font-weight: 600
+            color: $dark
+            &:hover 
+              color: $marine
+              transition: .3s
+              text-decoration: none
+
+
+.sidebar 
+  background-color: $white
+  padding: 20px 
+  height: 100%
+  box-shadow: 0 0 12px rgba(0,0,0,0.1)
+
+  &-title 
+    color: $marine 
+    font-size: 20px
+    font-family: Arial, serif
+    font-weight: bold
+
+  &-list 
+    list-style-image: url(../img/dot.png) 
+    list-style-position: outside
+    padding-left: 20px
+    margin-top: 20px
+    li 
+      margin-top: 10px
+      font-size: 14px
+      line-height: 18px
+
+
+.footer
+  padding-top: 40px
+  
+  background-color: $gray
+  box-shadow: 0 0 12px rgba(0,0,0,0.1)
+  &-white 
+    background-color: $white
+  &-logo 
+    img
+      width: 100%
+  &-menu
+    &s 
+    &__services, &__products, &__articles, &__contacts
+      width: 24.9%
+      //display: inline-block
+      float: left
+      
+    &__services
+    &__products
+    &__articles
+    &__contacts
+
+    &__title
+      font-family: Arial, serif
+      font-weight: 600
+      font-size: 20px
+      text-transform: uppercase
+      margin-bottom: 5px
+    &__list
+      padding-left: 0
+      font-size: 15px
+      list-style-image: url(../img/dot.png)
+      list-style-position: inside
+      padding: 0px 10px
+      a 
+        color: #212529
+    &__items
+
+    &__phones 
+      margin-bottom: 9px
+      .phone
+        &-icon
+          display: inline-block
+          float: left
+          img 
+            width: 20px
+          
+        &-txt
+          // display: inline-block
+          margin-left: 28px
+          font-size: 14px
+          font-weight: bold
+          
+          a 
+            display: block
+            color: $dark
+    &__mail
+      margin-bottom: 9px
+      .mail
+        &-icon
+          display: inline-block
+          float: left
+          img 
+            width: 20px
+        &-txt
+          display: inline-block
+          margin-left: 8px
+          font-size: 14px
+          color: $dark
+    &__time
+      margin-bottom: 9px
+      .time
+        &-icon
+          display: inline-block
+          float: left
+          img 
+            width: 20px
+        &-txt
+          // display: inline-block
+          margin-left: 8px
+          font-size: 14px
+    &__map
+      clear: both
+      .map
+        &-icon
+          display: inline-block
+          float: left
+        &-txt
+          display: block
+          margin-left: 30px
+          font-size: 14px
+          img 
+            width: 20px
+
+  &-bottom
+    margin-top: 60px 
+    padding: 20px
+    background-color: $marine
+    color: $white
+    font-size: 14px
+    &__copy 
+    &__politics
+      display: block
+      text-align: right
+      &:hover 
+        cursor: pointer
+        text-decoration: underline
+        transition: .3s
+
+    
+
+
+  
+section 
+  padding: 80px 0px
+  .section
+    &-title,  &-title-left
+      h1, h2 
+        font-family: Arial ,serif
+        font-weight: 600
+        font-size: 30px
+        text-transform: uppercase
+        color: $dark
+        text-align: center
+        margin-bottom: 0
+    &-img 
+      text-align: center 
+      margin: 0 auto
+      margin-top: 10px
+
+    &-title-left
+      display: flex 
+      flex-direction: row 
+      justify-content: flex-start
+      align-content: center
+      align-items: center
+
+      .section-img
+        margin: 0 0 0 30px
+    
+
+section.search 
+  .title, .subtitle 
+    font-family: Arial, serif
+  .subtitle 
+    margin-top: 40px
+
+  ul
+    li 
+      list-style: none
+  
+
+  .link
+
+    &-title, a
+      display: inline-block 
+
+    &-title 
+
+    a 
+      margin-left: 30px
+      color: $marine
+      font-size: 17px
+      font-weight: bold
+      text-decoration: underline
+
+
+button, .button
+  font-family: Arial ,serif
+  font-weight: 600
+  font-size: 15px
+  text-transform: uppercase
+  color: $marine
+  width: 100%
+  display: block
+  padding: 8px
+  border-radius: 5px
+  border: 2px solid $marine
+  background-color: transparent
+  text-align: center
+  &:hover 
+    background-color: $dark
+    border-color: $dark
+    color: $white 
+    text-decoration: none
+
+    transition: all .5s 
+
+
+
+
+
+
+
+
+

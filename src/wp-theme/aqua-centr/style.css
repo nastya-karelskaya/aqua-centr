@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*
+Theme Name: SvarTechKom
+
+Author: Anastasia Pavlova
+Author URI: http://anastasia-pavlova.com 
+Description: 
+Requires at least: WordPress 4.9.6
+Version: 1.0
+License: 
+License URI: 
+Text Domain: 
+Tags: 
+
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variables
+# Normalize
+# Typography
+	## Headings
+	## Copy
+# Elements
+	## Lists
+	## Tables
+# Forms
+	## Buttons
+	## Fields
+# Navigation
+	## Links
+	## Menus
+	## Next & Previous
+# Accessibility
+# Alignments
+# Clearings
+# Layout
+# Widgets
+# Content
+	## Archives
+	## Posts and pages
+	## Comments
+# Blocks
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+
+ body {
+	 background-color: #ffffff;
+ }
+
+
+

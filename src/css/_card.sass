@@ -1,0 +1,102 @@
+.card 
+  background-color: $gray
+  padding-top: 35px
+  padding-bottom: 50px
+
+  .section-subtitle 
+    font-size: 12px
+
+  .section-title 
+    margin-top: 25px
+    text-align: left
+
+    display: flex 
+    flex-direction: row
+    h1
+      color: #1a1a1a
+      font-size: 30px
+      font-family: Arial, serif
+      font-weight: bold
+
+    .section-img 
+      margin-top: 0
+
+  &-descr, &-passport 
+    margin-top: 30px
+
+  &-descr 
+    display: flex 
+    flex-direction: row 
+
+    &__img
+      padding: 15px
+      background-color: #ffffff
+
+      width: fit-content
+      height: fit-content
+
+      text-align: center
+      // position: relative
+      border-radius: 30px
+      box-shadow: 0 0 12px rgba(0,0,0,0.1)
+      img 
+        max-width: 180px
+
+      &-wrapper 
+        padding-top: 15px
+        padding-left: 15px
+        width: fit-content
+        height: fit-content
+        background-color: $marine
+        border-radius: 30px
+        box-shadow: 0 0 12px rgba(0,0,0,0.1)
+        // position: absolute 
+        // top: -20px
+        // left: -20px
+
+
+    &__txt 
+      margin-left: 15px
+      padding-top: 20px
+      display: flex 
+      flex-direction: column 
+      justify-content: flex-end
+      &-title 
+        font-family: Arial, serif
+        font-size: 18px
+        font-weight: bold
+        color: $marine 
+
+      &-subtitle 
+        font-size: 14px
+        margin-top: 5px
+
+      &-price 
+        font-family: Arial, serif
+        font-weight: bold
+        font-size: 18px
+        text-transform: uppercase
+        margin-top: 50px
+      &-button 
+        margin-top: 15px
+
+  &-passport
+    border-radius: 20px
+    box-shadow: 0 0 12px rgba(0,0,0,0.1)
+    background-color: #ffffff
+    padding: 20px
+
+    &__title 
+      
+      font-family: Arial, serif
+      font-size: 18px
+      font-weight: bold
+      color: $marine 
+    &__list 
+      padding-left: 20px
+      list-style-image: url("../img/dot.png")
+      li
+        font-size: 14px 
+
+
+

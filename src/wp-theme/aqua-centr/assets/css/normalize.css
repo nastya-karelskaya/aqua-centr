@@ -1,0 +1,14 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:hover {
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+body {
+  font-family: Roboto Mono, Arial, sans-serif, serif;
+}
+/*# sourceMappingURL=normalize.css.map */

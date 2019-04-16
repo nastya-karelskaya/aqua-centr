@@ -1,0 +1,86 @@
+.products
+  &-main 
+    background-color: $gray
+
+    .section-title 
+      display: flex 
+      flex-direction: row 
+      justify-content: flex-start
+      align-content: center
+      align-items: center
+
+    .section-img
+      margin: 0 0 0 30px
+
+    &__grid 
+      margin-top: 80px
+
+    &__item 
+      border-radius: 40px
+      background-color: $white
+      box-shadow: 0 0 12px rgba(0,0,0,0.1)
+
+      position: relative
+      margin-bottom: 90px
+      padding: 40px 25px 20px 25px
+      &-title
+        &-wrapper 
+          width: 85%
+          position: absolute
+          top: -30px
+          left: 15px
+          border-radius: 50px
+          background-color: $marine
+          padding: 12px 0px 12px 20px 
+
+        font-size: 19px
+        font-weight: 600
+        font-family: Arial, serif
+        text-align: left
+        text-transform: uppercase
+        color: $white
+
+
+      &-txt 
+        display: flex 
+        flex-direction: row
+        justify-content: center 
+        align-content: center 
+
+
+        
+
+      &-img 
+        flex-basis: 40%
+        margin-top: 3%
+        // float: left
+        // width: 110px
+        max-height: 140px
+        img
+          height: 100%
+          overflow: hidden
+
+      &-descr 
+        flex-basis: 59%
+        margin-left: 20px
+        &-title 
+          font-family: Arial, serif
+          font-size: 18px
+          font-weight: 600
+
+        &-list  
+          padding-left: 0
+          font-size: 13px
+          list-style-image: url(../img/dot.png)
+          list-style-position: inside 
+
+      &-button
+        position: absolute
+        bottom: -25px
+        right: 30px
+        width: unset 
+        a
+          padding: 10px 25px
+          background-color: $white
+
+      

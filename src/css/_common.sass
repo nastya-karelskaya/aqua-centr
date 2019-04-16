@@ -121,11 +121,37 @@
               color: $marine
               transition: .3s
 
+
+.sidebar 
+  background-color: $white
+  padding: 20px 
+  height: 100%
+  box-shadow: 0 0 12px rgba(0,0,0,0.1)
+
+  &-title 
+    color: $marine 
+    font-size: 20px
+    font-family: Arial, serif
+    font-weight: bold
+
+  &-list 
+    list-style-image: url(../img/dot.png) 
+    list-style-position: outside
+    padding-left: 20px
+    margin-top: 20px
+    li 
+      margin-top: 10px
+      font-size: 14px
+      line-height: 18px
+
+
 .footer
   padding-top: 40px
   
   background-color: $gray
   box-shadow: 0 0 12px rgba(0,0,0,0.1)
+  &-white 
+    background-color: $white
   &-logo 
     img
       width: 100%
@@ -151,6 +177,8 @@
       font-size: 15px
       list-style-image: url(../img/dot.png)
       list-style-position: inside
+      a 
+        color: #212529
     &__items
 
     &__phones 
