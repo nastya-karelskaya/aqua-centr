@@ -33,17 +33,17 @@ get_header();
     
     <div class="contacts-grid">
       <div class="contacts-map">
-          <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A61064b46ae6deb08acbe94166a9feefe66939f17638543ffbc20869df2608cdf&amp;width=810&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script> -->
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A61064b46ae6deb08acbe94166a9feefe66939f17638543ffbc20869df2608cdf&amp;width=810&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
       
       <div class="container">
         <div class="row">
-          <div class="col-3"></div>
-          <div class="col-4">
+          <div class="col-12 col-md-6 col-lg-7 col-xl-3"></div>
+          <div class="col-12 col-md-6 col-lg-5 col-xl-4">
             <div class="contacts-info">
-              <div class="contacts-info__title">
+              <h2 class="contacts-info__title">
                   Контактная информация
-              </div>
+              </h2>
               <div class="contacts-info__phone">
                 <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/phone-blue.png';?>" alt="">
                 <div class="phone">
@@ -74,9 +74,9 @@ get_header();
               </div>
             </div>
           </div>
-          <div class="col-5">
+          <div class="col-12 col-xl-5">
             <form action="" class="contacts-form">
-              <div class="contacts-form__name">
+              <!-- <div class="contacts-form__name">
                 <label for="name">
                     Ваше имя:
                 </label>
@@ -98,8 +98,9 @@ get_header();
               
               </div>
               <div class="contacts-form__button">
-                <button>ПОДРОБНЕЕ</button>
-              </div>
+                <button>Отправить</button>
+              </div> -->
+              <?php echo do_shortcode('[contact-form-7 id="680" title="Контактная форма Контакты"]'); ?>
             </form>
             
           </div>
@@ -111,5 +112,5 @@ get_header();
     <!-- ./contacts -->
 
 <?php 
-get_footer(); 
+get_footer("gray"); 
 ?>

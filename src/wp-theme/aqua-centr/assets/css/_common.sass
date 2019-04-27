@@ -12,6 +12,9 @@
       justify-content: space-between
       align-items: center
 
+    &__logo-mobile
+      display: none
+
     &__phones
       display: inline-block
       margin-top: 10px
@@ -86,7 +89,7 @@
             color: $white
 
     &__search
-      margin-top: 5px
+      margin-top: 7px
       input.search-input 
         height: 50px
         border: 2px solid $white
@@ -124,6 +127,10 @@
     .navbar
       padding-right: 0
       padding-left: 0
+      &-toggler
+        &:hover, &:focus 
+          border-color: $marine
+
       &-collapse
         margin-top: 7px
       &-nav
@@ -151,12 +158,64 @@
               transition: .3s
               text-decoration: none
 
+      .menu-item-has-children
+        position: relative
+        .sub-menu
+          left: 0px
+          z-index: 100
+
+      .menu-item-has-children
+        &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6)
+          .sub-menu
+            
+
+      .sub-menu
+        display: none
+        position: absolute
+        top: 30px
+        background-color: $white
+        padding: 0px 10px 10px 10px 
+        transition: display .4s
+        width: 300px
+        border: 1px solid $marine
+        li 
+          border-bottom: 1px solid $marine
+          padding: 2px 10px
+          a
+            font-size: 15px
+
+        &.active 
+          display: block
+          left: 30px
+
 
 .sidebar 
   background-color: $white
   padding: 20px 
   height: 100%
   box-shadow: 0 0 12px rgba(0,0,0,0.1)
+  list-style: none
+  .content 
+    height: 100%
+  li.menu-item-has-children>a 
+    color: $marine 
+    font-size: 20px
+    font-family: Arial, serif
+    font-weight: bold
+    text-transform: uppercase
+  ul 
+    padding-top: 5px
+    list-style: none
+  ul.sub-menu
+    list-style-image: url(../img/dot.png) 
+    list-style-position: inside
+    padding-left: 0px
+    margin-bottom: 60px
+    
+    a
+      color: #212529
+      font-size: 15px
+
 
   &-title 
     color: $marine 
@@ -180,13 +239,40 @@
   
   background-color: $gray
   box-shadow: 0 0 12px rgba(0,0,0,0.1)
-  &-white 
+  &.white 
     background-color: $white
+  &.gray 
+    background-color: $gray
   &-logo 
     img
       width: 100%
   &-menu
     &s 
+      padding-left: 0
+      display: flex 
+      flex-direction: row
+      width: 75%
+      float: left
+      list-style: none
+      li.menu-item-has-children
+        width: 33%
+        &>a 
+          font-family: Arial, serif
+          font-weight: 600
+          font-size: 20px
+          text-transform: uppercase
+          margin-bottom: 5px
+          color: #212529
+
+      ul.sub-menu 
+        
+        font-size: 15px
+        list-style-image: url(../img/dot.png)
+        list-style-position: inside
+        padding: 0px 10px 0px 0px
+        a 
+          color: #212529
+
     &__services, &__products, &__articles, &__contacts
       width: 24.9%
       //display: inline-block
@@ -290,16 +376,40 @@
   
 section 
   padding: 80px 0px
+
+  .container 
+    .content 
+      height: 100%
+      
   .section
-    &-title,  &-title-left
+    &-subtitle
+      margin-bottom: 40px
+      font-size: 14px
+      a 
+        color: $dark
+        font-size: 14px
+        
+        &:hover 
+          color: $marine
+          font-weight: bold
+          text-decoration: none
+
+    &-title, &-title-left
       h1, h2 
         font-family: Arial ,serif
         font-weight: 600
         font-size: 30px
         text-transform: uppercase
         color: $dark
-        text-align: center
+        
         margin-bottom: 0
+    &-title 
+      h1,h2 
+        text-align: center
+    &-title-left 
+      h1,h2 
+        text-align: left
+        max-width: 600px
     &-img 
       text-align: center 
       margin: 0 auto
@@ -310,10 +420,10 @@ section
       flex-direction: row 
       justify-content: flex-start
       align-content: center
-      align-items: center
+      align-items: flex-start
 
       .section-img
-        margin: 0 0 0 30px
+        margin: 5px 0 0 30px
     
 
 section.search 

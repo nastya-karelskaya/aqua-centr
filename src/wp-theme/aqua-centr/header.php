@@ -30,8 +30,13 @@
     <div class="header-top">
       <div class="container">
         <div class="row">
-          <div class="col-9">
+          <div class="col-12 col-md-7 col-lg-9">
+
             <div class="header-top__wrapper">
+              <div class="header-top__menu-mobile"></div>
+              <div class="header-top__logo-mobile">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/header/logo-top.png';?>" alt="">
+              </div>
 
               <div class="header-top__phones">
                 <div class="phone-icon">
@@ -65,12 +70,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
-            <!-- <div class="header-top__search"> -->
-              <!-- <input type="text" class="search-input" placeholder="Поиск">
-              <img src="<?php //echo get_template_directory_uri() . '/assets/img/header/search.png';?>" alt="" class="search-img"> -->
-              
-            <!-- </div> -->
+          <div class="col-0 col-md-5 col-lg-3">
             <?php get_search_form(); ?>
           </div>
         </div>
@@ -80,16 +80,20 @@
     <div class="header-nav">
       <div class="container">
         
-        <nav class="navbar navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg">
           <a class="navbar-brand" href="<?php echo home_url(); ?>">
               <img src="<?php echo get_template_directory_uri() . '/assets/img/header/logo-top.png';?>"  alt="">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <div class="navbar-toggler-icon">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+            </div>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
           <?php wp_nav_menu( [
-            'theme_location'  => 'bottom',
+            'theme_location'  => 'top',
             'menu'            => '', 
             'container'       => false, 
             // 'container_class' => '', 
@@ -106,23 +110,7 @@
             'depth'           => 0,
             'walker'          => '',
           ] );?>
-            <!-- <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">О компании <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Оборудование</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Услуги</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Важно знать</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Контакты</a>
-              </li>
-            </ul> -->
+          
           </div>
         </nav>
       </div>

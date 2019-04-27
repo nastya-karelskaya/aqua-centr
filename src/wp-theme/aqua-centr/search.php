@@ -7,7 +7,7 @@
         <div class="content">
 
           <div class="row">
-            <div class="col-12">
+            <div class="col-9">
 
               <div class="title">
                 <h1>
@@ -41,6 +41,28 @@
               </div>
 
             </div>
+
+            <div class="col-3">
+          <?php wp_nav_menu( [
+              'theme_location'  => 'right_search',
+              'menu'            => '', 
+              'container'       => false, 
+              // 'container_class' => '', 
+              // 'container_id'    => '',
+              'menu_class'      => 'sidebar sidebar-services', 
+              'menu_id'         => '',
+              'echo'            => true,
+              'fallback_cb'     => 'wp_page_menu',
+              'before'          => '',
+              'after'           => '',
+              'link_before'     => '',
+              'link_after'      => '',
+              'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              'depth'           => 0,
+              'walker'          => '',
+            ] );
+          ?>
+        </div> 
           </div>
 
 
@@ -55,4 +77,4 @@
 
 
  
- <?php get_footer(); ?>
+ <?php get_footer("gray"); ?>

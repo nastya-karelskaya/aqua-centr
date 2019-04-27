@@ -18,9 +18,21 @@ get_header();
       
   <div class="picture">
     <div class="container">
-    <h1>
-    Аква-центр, Петрозаводск
-    </h1>
+    <div class="picture-content">
+      <div class="picture-img">
+        <img src="<?php echo get_template_directory_uri() . '/assets/img/index/picture-smaller.png';?>" alt="">
+      </div>
+    
+      <a href="#" class="link-systems">системы <br> очистки воды</a>
+      <a href="#" class="link-septics">автономная <br> канализация</a>
+      <a href="#" class="link-hidro">гидроаккумулятор <br> и автоматика</a>
+      <a href="#" class="link-pumps">скважинный <br> насос</a>
+
+      <h1>
+      Аква-центр, Петрозаводск
+      </h1>
+    </div>
+    
     </div>
   </div>
 
@@ -47,39 +59,95 @@ get_header();
       
       <div class="container">
         <div class="row">
-          <?php
-              //     setup_postdata($post);
-              $products_posts = get_posts( array(
-              
-                'orderby'     => 'date',
-                'order'       => 'ASC',
-                //'meta_key'    => '',
-                //'meta_value'  =>'',
-                'post_type'   => 'oborudovanie',
-                //'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-              ) );
 
-              foreach( $products_posts as $post ){
-                setup_postdata($post);
-          ?>
-            <div class="col-6">
+          <?php
+             //     setup_postdata($post);
+             $products_parent = get_page_by_title( 'Оборудование', OBJECT, 'page' );
+             //echo $products_parent->ID;
+             $products_args = array(
+              'sort_order'   => 'ASC',
+              'sort_column'  => 'post_title',
+              'hierarchical' => 1,
+              'exclude'      => '',
+              'include'      => '',
+              'meta_key'     => '',
+              'meta_value'   => '',
+              'authors'      => '',
+              'child_of'     => $products_parent->ID,
+              'parent'       => $products_parent->ID,
+              'exclude_tree' => '',
+              'number'       => '',
+              'offset'       => 0,
+              'post_type'    => 'page',
+              'post_status'  => 'publish',
+            ); 
+            $products_pages = get_pages( $products_args );
+            
+            foreach( $products_pages as $post ){
+              setup_postdata($post);
+              //echo $post->ID . ' ' . $post->post_title . ' ';
+            //echo  get_field( "vehicle_mark", $post->ID);
+            $product_img = get_field( "vehicle_img", get_the_ID());
+            if( get_field( "vehicle_mark", get_the_ID()) ) {
+              
+        ?>
+        
+            <div class="col-12 col-lg-6">
               <div class="products-item">
-                <div class="products-item__title">
+                <h3 class="products-item__title">
                   <?php the_title(); ?>
-                </div>
+                </h3>
                 <div class="products-item__descr">
                   <div class="products-item__img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/index/prod-2.png';?>" alt="">
+                    <img src="<?php echo $product_img;?>" alt="">
                   </div>
                   <div class="products-item__txt">
                     <div class="products-item__txt-subtitle">
                       Категории:
                     </div>
                     <ul class="products-item__txt-list">
-                      <li>Скважинные  Насосы AquamotoR</li>
-                      <li>Скважинные RНасосы КАСКАД</li>
-                      <li>Скважинные Насосы Grundfos</li>
-                      <li>Автоматика и гидробаки </li>
+                    <?php 
+                      $children_args = array(
+                        'sort_order'   => 'ASC',
+                        'sort_column'  => 'post_title',
+                        'hierarchical' => 1,
+                        'exclude'      => '',
+                        'include'      => '',
+                        'meta_key'     => '',
+                        'meta_value'   => '',
+                        'authors'      => '',
+                        'child_of'     => get_the_ID(),
+                        'parent'       => get_the_ID(),
+                        'exclude_tree' => '',
+                        'number'       => '',
+                        'offset'       => 0,
+                        'post_type'    => 'page',
+                        'post_status'  => 'publish',
+                      ); 
+                      $children_pages = get_pages( $children_args );
+
+                      $li_counter = 0;
+
+                      foreach( $children_pages as $child_page ){
+    
+                        //echo get_page_link($child_page->ID);
+                        //echo $child_page->
+                        if($li_counter<3) {
+                      ?>
+                    
+                          <li>
+                            <a href="<?php echo get_page_link($child_page->ID);?>">
+                              <?php echo $child_page->post_title;?>
+                            </a>                      
+                          </li>
+                        
+                        <?php 
+                        $li_counter++;
+                        }
+                      }
+                        ?>
+                      ...
+                        </ul>
                     
                     </ul>
                     
@@ -92,89 +160,14 @@ get_header();
             </div>
 
           <?php 
+              }
 
             }
               
             wp_reset_postdata(); // сброс
           ?>
 
-          <!-- <div class="col-6">
-            <div class="products-item2">
-              <div class="products-item2__title">Системы очистки воды</div>
-              <div class="products-item2__descr">
-                <div class="products-item2__img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/index/prod-1.png';?>" alt="">
-                </div>
-                <div class="products-item2__txt">
-                  <div class="products-item2__txt-subtitle">
-                      Категории:
-                    </div>
-                    <ul class="products-item2__txt-list">
-                      <li>Типовые решения</li>
-                      <li>Системы комплексной очистки от железа, марганца, 
-                          жесткости</li>
-                      
-                    </ul>
-                </div>
-                </div>
-              <div class="products-item2__button">
-                <button>ПОДРОБНЕЕ</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-6">
-            <div class="products-item3">
-              <div class="products-item3__title">Инженерная сантехника</div>
-              <div class="products-item3__descr">
-                <div class="products-item3__img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/index/prod-3.png';?>" alt="">
-                </div>
-                <div class="products-item3__txt">
-                  <div class="products-item3__txt-subtitle">
-                    Категории:
-                  </div>
-                  <ul class="products-item3__txt-list">
-                    <li>Водопроводные трубы и фитинги</li>
-                    <li>Канализационные трубы и фитинги</li>
-                    <li>Запорная арматура</li>
-                    
-                  
-                  </ul>
-                  
-                </div>
-              </div>
-              <div class="products-item3__button">
-                <button>ПОДРОБНЕЕ</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-6">
-            <div class="products-item4">
-              <div class="products-item4__title">Септики (био-станции)</div>
-              <div class="products-item4__descr">
-                <div class="products-item4__img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/index/prod-4.png';?>" alt="">
-                </div>
-                <div class="products-item4__txt">
-                  <div class="products-item4__txt-subtitle">
-                    Категории:
-                  </div>
-                  <ul class="products-item4__txt-list">
-                    <li>Станции (Септики) Юнилос</li>
-                    <li>Станции (Септики) Топас</li>
-                    <li>Станции септики Евробион</li>
-                    <li>Станции (СЕПТИКИ) VORTEX</li>
-                  
-                  </ul>
-                </div>
-              </div>
-              <div class="products-item4__button">
-                <button>ПОДРОБНЕЕ</button>
-              </div>
-            </div>
-          </div> -->
+        
 
         </div>
       </div>
@@ -205,64 +198,52 @@ get_header();
                 <div class="services-row">
 
                   <?php
+                  $services_parent = get_page_by_title( 'Услуги', OBJECT, 'page' );
                       //     setup_postdata($post);
-                      $services_posts = get_posts( array(
-                      
-                        'orderby'     => 'date',
-                        'order'       => 'ASC',
-                        //'meta_key'    => '',
-                        //'meta_value'  =>'',
-                        'post_type'   => 'uslugy',
-                        //'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-                      ) );
-
-                      foreach( $services_posts as $post ){
+                      $services_args = array(
+                        'sort_order'   => 'ASC',
+                        'sort_column'  => 'post_title',
+                        'hierarchical' => 1,
+                        'exclude'      => '',
+                        'include'      => '',
+                        'meta_key'     => '',
+                        'meta_value'   => '',
+                        'authors'      => '',
+                        'child_of'     => $services_parent->ID,
+                        'parent'       => $services_parent->ID,
+                        'exclude_tree' => '',
+                        'number'       => '',
+                        'offset'       => 0,
+                        'post_type'    => 'page',
+                        'post_status'  => 'publish',
+                      ); 
+                      $services_pages = get_pages( $services_args );
+                      foreach( $services_pages as $post ){
                         setup_postdata($post);
+                        $service_img = get_field( "service_img", get_the_ID());
+
+                        if(get_field( "service_mark", get_the_ID()) ) {
                   ?>
 
 
-                  <div class="services-item1">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/index/service-1.png';?>" alt="">
+                  <div class="services-item">
+                    <div class="services-item__img">
+                      <img src="<?php echo $service_img;?>" alt="">
+                    </div>
                     <div class="services-item__title-wrapper">
-                      <div class="services-item__title">
+                      <h3 class="services-item__title">
                         <?php the_title(); ?>
-                        <!-- Обустройство 
-                          скважин -->
-                      </div>
+                      </h3>
                     </div>
                     
                     <a class="button services-item__button" href="<?php the_permalink(); ?>">ПОДРОБНЕЕ</a>
                   </div>
-                  <!-- <div class="services-item2">
-                      <img src="<?php echo get_template_directory_uri() . '/assets/img/index/service-2.png';?>" alt="">
-                    <div class="services-item__title">Анализ
-                        воды
-                        </div>
-                    <div class="button services-item__button">ПОДРОБНЕЕ</div>
-                  </div>
-                  <div class="services-item3">
-                      <img src="<?php echo get_template_directory_uri() . '/assets/img/index/service-3.png';?>" alt="">
-                    <div class="services-item__title">Монтаж 
-                        водоочистного 
-                        оборудования</div>
-                    <div class="button services-item__button">ПОДРОБНЕЕ</div>
-                  </div>
-                  <div class="services-item4">
-                      <img src="<?php echo get_template_directory_uri() . '/assets/img/index/service-4.png';?>" alt="">
-                    <div class="services-item__title">Монтаж 
-                        автономной 
-                        канализации</div>
-                    <div class="button services-item__button">ПОДРОБНЕЕ</div>
-                  </div>
-                  <div class="services-item5">
-                      <img src="<?php echo get_template_directory_uri() . '/assets/img/index/service-5.png';?>" alt="">
-                    <div class="services-item__title">Сервис</div>
-                    <div class="button services-item__button">ПОДРОБНЕЕ</div>
-                  </div> -->
+                 
 
                   <?php 
 
                     }
+                  }
                       
                     wp_reset_postdata(); // сброс
                   ?>
@@ -294,11 +275,11 @@ get_header();
     <div class="advantages-row">
       <div class="container">
         <div class="row">
-          <div class="col-4">
+          <div class="col-12 col-lg-4">
             <div class="advantages-item1">
-              <div class="advantages-item__title">
+              <h3 class="advantages-item__title">
                 ВСЕГДА <br> ЧЕСТНЫЕ ЦЕНЫ!                    
-              </div>
+              </h3>
               <div class="advantages-item__imgs">
                 <div class="advantages-item__img-1">
                   <img src="<?php echo get_template_directory_uri() . '/assets/img/index/adv-3.png';?>" alt="">
@@ -312,20 +293,23 @@ get_header();
               </div>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-lg-4">
             <div class="advantages-item2">
-              <img src="<?php echo get_template_directory_uri() . '/assets/img/index/adv-center.png';?>" alt="">
-                <div class="advantages-item__title">
-                  мы не навязываем лишнего, предложим только необходимое!
-                </div>
+              <div class="advantages-item2__img">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/index/adv-center.png';?>" alt="">
+              </div>
+              
+              <h3 class="advantages-item__title">
+                мы не навязываем лишнего, предложим только необходимое!
+              </h3>
               
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-lg-4">
             <div class="advantages-item3">
-              <div class="advantages-item__title">
+              <h3 class="advantages-item__title">
                 несем ответственность <br> за результат!
-              </div>
+              </h3>
               <div class="advantages-item__imgs">
                 <div class="advantages-item__img-1">
                   <img src="<?php echo get_template_directory_uri() . '/assets/img/index/adv-4.png';?>" alt="">
@@ -360,13 +344,19 @@ get_header();
       </div>
   
       <div class="row">
-        <div class="col-6">
+        <div class="col-12">
           <div class="order-subtitle">
             Для заказа услуг или продукции напишите нам!
           </div>
+        </div>
+      <!-- </div>
+
+      <div class="row"> -->
+        <div class="col-12 col-lg-6">
+          
           <form class="order-form">
             <div class="row">
-              <div class="col-6">
+              <div class="col-12 col-md-6">
                 <div class="order-form__name">
                   <div class="order-form__name-txt">Ваше имя:</div>
                   <input type="text" class="order-form__name-input" placeholder="Имя">
@@ -376,7 +366,7 @@ get_header();
                   <input type="text" class="order-form__mail-input" placeholder="E-mail">
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-12 col-md-6">
                 <div class="order-form__text">
                   <div class="order-form__text-txt">Ваше сообщение:</div>
                   <textarea class="order-form__text-input" placeholder="Сообщение"></textarea>
@@ -386,14 +376,18 @@ get_header();
             <div class="order-form__button">
               <input type="button" class="button" value="Заказать">
             </div>
+            <?php //echo do_shortcode('[contact-form-7 id="679" title="Контактная форма Главная"]'); ?>
           </form>
         </div>
-        <div class="col-6">
-          <div class="order-photo">
+        <!-- <div class="col-12 col-lg-6"> -->
+          
+        <!-- </div> -->
+      </div>
+
+      <div class="order-photo">
             <img src="<?php echo get_template_directory_uri() . '/assets/img/index/form-bg.jpeg';?>" alt="">
           </div>
-        </div>
-      </div>
+
     </div>  
   </section>
 
@@ -413,14 +407,14 @@ get_header();
         </div>
       
         <div class="row">
-          <div class="col-5">
+          <div class="col-12 col-lg-6 col-xl-5">
             <div class="about-photo__wrapper">
               <div class="about-photo">
                 <img src="<?php echo get_template_directory_uri() . '/assets/img/index/order.png';?>" alt="">
               </div>
             </div>
           </div>
-          <div class="col-7">
+          <div class="col-12 col-lg-6 col-xl-7">
             <div class="about-txt">
               <div class="about-txt__descr">
                   "Аква-Центр" предоставляет услуги по поставке и монтажу оборудования 
@@ -447,5 +441,5 @@ get_header();
 
 <?php
 // get_sidebar();
-get_footer();
+get_footer("gray");
 ?>

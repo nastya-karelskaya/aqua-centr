@@ -15,7 +15,7 @@ get_header();
   <section class="services-main">
     <div class="container">
       <div class="row">
-        <div class="col-9">
+        <div class="col-12 col-xl-9">
           <div class="content">
             <div class="row">
               <div class="col-12">
@@ -32,18 +32,14 @@ get_header();
 
             <div class="services-main__descr">
               <div class="row">
-                <div class="col-6">
-                    Мы предоставляем все виды услуг по водо-
-                    подготовке и водоочистке по доступным це-
-                    нам и гарантируем полную техническую и 
-                    информационную поддержку.                   
+                <div class="col-12 col-lg-6">
+                    <?php echo get_field("text_1",get_the_ID());?>               
                 </div>
-                <div class="col-6">
-                    Для заказа оборудования и консультаций 
-                    обращайтесь к нашим специалистам по 
-                    указанным телефонам: 
+                <div class="col-12 col-lg-6">
+                    <?php echo get_field("text_1",get_the_ID());?>   
                     <div>
-                        <span>8 (8142) 28 02 01</span>   <span>8 (8142) 28 32 01</span>  
+                        <a href="<?php echo get_field("phone_1",get_the_ID());?>"><?php echo get_field("phone_1",get_the_ID());?></a>    
+                        <a href="<?php echo get_field("phone_2",get_the_ID());?>"><?php echo get_field("phone_2",get_the_ID());?></a>  
                     </div>
                                   
                 </div>
@@ -52,28 +48,39 @@ get_header();
 
             <div class="services-main__grid">
             <div class="row">
-              <?php
-                //     setup_postdata($post);
-                $services_posts = get_posts( array(
-                
-                  'orderby'     => 'date',
-                  'order'       => 'ASC',
-                  //'meta_key'    => '',
-                  //'meta_value'  =>'',
-                  'post_type'   => 'uslugy',
-                  //'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-                ) );
+            <?php                 
 
-                foreach( $services_posts as $post ){
-                  setup_postdata($post);
+                  $args = array(
+                    'sort_order'   => 'ASC',
+                    'sort_column'  => 'post_title',
+                    'hierarchical' => 1,
+                    'exclude'      => '',
+                    'include'      => '',
+                    'meta_key'     => '',
+                    'meta_value'   => '',
+                    'authors'      => '',
+                    'child_of'     => get_the_ID(),
+                    'parent'       => get_the_ID(),
+                    'exclude_tree' => '',
+                    'number'       => '',
+                    'offset'       => 0,
+                    'post_type'    => 'page',
+                    'post_status'  => 'publish',
+                  ); 
+                  $pages = get_pages( $args );
+                  foreach( $pages as $post ){
+                    setup_postdata( $post );
+                
+
+                  $obj_img = get_field( "service_img", get_the_ID() );
               ?>
-              <div class="col-6">
+              <div class="col-12 col-md-6">
                 <div class="services-main__item">
-                  <img src="<?php echo get_template_directory_uri() . '/assets/img/uslugi/1.jpeg';?>" alt="">
+                  <img src="<?php echo $obj_img;?>" alt="">
                   <div class="services-main__item-title-wrapper">
-                    <div class="services-main__item-title">
+                    <h2 class="services-main__item-title">
                         <?php the_title(); ?>
-                    </div>
+                    </h2>
                   </div>
                   
                   <a class="button services-main__item-button" href="<?php the_permalink(); ?>">ПОДРОБНЕЕ</a>
@@ -94,6 +101,28 @@ get_header();
 
           </div>
         </div>
+
+        <div class="col-12 col-xl-3">
+          <?php wp_nav_menu( [
+              'theme_location'  => 'right_services',
+              'menu'            => '', 
+              'container'       => false, 
+              // 'container_class' => '', 
+              // 'container_id'    => '',
+              'menu_class'      => 'sidebar sidebar-services', 
+              'menu_id'         => '',
+              'echo'            => true,
+              'fallback_cb'     => 'wp_page_menu',
+              'before'          => '',
+              'after'           => '',
+              'link_before'     => '',
+              'link_after'      => '',
+              'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              'depth'           => 0,
+              'walker'          => '',
+            ] );?>
+         
+        </div>
         
       </div>
     </div>
@@ -101,5 +130,5 @@ get_header();
 
 
 <?php 
-get_footer(); 
+get_footer("white"); 
 ?>

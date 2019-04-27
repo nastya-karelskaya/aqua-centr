@@ -12,7 +12,7 @@ Template Name: Важно знать
 get_header();
 ?>
        
-       <section class="posts">
+    <section class="posts">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -33,36 +33,47 @@ get_header();
           <div class="row">
 
             <?php
-                //     setup_postdata($post);
-                $important_posts = get_posts( array(
-                
-                  'orderby'     => 'date',
-                  'order'       => 'ASC',
-                  //'meta_key'    => '',
-                  //'meta_value'  =>'',
-                  'post_type'   => 'statiyi',
-                  //'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-                ) );
+                $args = array(
+                  'sort_order'   => 'ASC',
+                  'sort_column'  => 'post_title',
+                  'hierarchical' => 1,
+                  'exclude'      => '',
+                  'include'      => '',
+                  'meta_key'     => '',
+                  'meta_value'   => '',
+                  'authors'      => '',
+                  'child_of'     => get_the_ID(),
+                  'parent'       => get_the_ID(),
+                  'exclude_tree' => '',
+                  'number'       => '',
+                  'offset'       => 0,
+                  'post_type'    => 'page',
+                  'post_status'  => 'publish',
+                ); 
+                $pages = get_pages( $args );
+                $pages_count = count($pages);
+                $counter=1;
+                  
+                foreach( $pages as $post ){
+                  setup_postdata( $post );
+                  $post_img = get_field("ava", get_the_ID());
+                  $post_exerp =  substr(get_field("par_1", get_the_ID()), 0, 75);
 
-                foreach( $important_posts as $post ){
-                  setup_postdata($post);
+                  if($counter != $pages_count) {
+                  
             ?>
 
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-lg-6">
                 <div class="posts-grid__item">
                   <div class="posts-grid__item-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/posts/post-1.jpeg';?>" alt="">
+                    <img src="<?php echo $post_img;?>" alt="">
                   </div>
                   <div class="posts-grid__item-txt">
                     <a href="<?php the_permalink();?>" class="posts-grid__item-title">
-                      <?php the_title(); ?>
+                      <h2><?php the_title(); ?></h2>
                     </a>
                     <div class="posts-grid__item-descr">
-                      Содержание железа и марганца может 
-                      нанести непоправимый вред вашему 
-                      здоровью, вызывать аллергическую 
-                      реакцию, а также у некоторых людей 
-                      может быть причиной болезни ..
+                    <?php echo $post_exerp; ?> ...
                     </div>
                   </div>
                   <div class="posts-grid__item-button">
@@ -72,106 +83,40 @@ get_header();
               </div>
 
               <?php 
+                  }
+                  else {
+                  
+              ?>
 
+              <div class="col-12">
+                <div class="posts-grid__item">
+                  <div class="posts-grid__item-img">
+                    <img src="<?php echo $post_img;?>" alt="">
+                  </div>
+                  <div class="posts-grid__item-txt">
+                    <a href="<?php the_permalink();?>" class="posts-grid__item-title">
+                      <h2><?php the_title(); ?></h2>
+                    </a>
+                    <div class="posts-grid__item-descr">
+                    <?php echo $post_exerp; ?> ...
+                    </div>
+                  </div>
+                  <div class="posts-grid__item-button">
+                    <a href="<?php the_permalink();?>" class="button">ПОДРОБНЕЕ</a>
+                  </div>
+                </div>
+              </div>
+
+
+              <?php
+                  }
+                  $counter = $counter + 1;
                 }
                   
                 wp_reset_postdata(); // сброс
               ?>
 
-              <!-- <div class="col-12 col-md-6">
-                <div class="posts-grid__item2">
-                  <div class="posts-grid__item2-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/posts/post-2.jpeg';?>" alt="">
-                  </div>
-                  <div class="posts-grid__item2-txt">
-                    <div class="posts-grid__item2-title">
-                      Какие бывают системы 
-                      очистки воды
-                    </div>
-                    <div class="posts-grid__item2-descr">
-                      Разберём плюсы и минусы некоторых 
-                      из них.Потребителю в наше время 
-                      очень сложно определится с выбором 
-                      системы очистки воды, в виду их 
-                      многообразия ...
-                    </div>
-                  </div>
-                  <div class="posts-grid__item2-button">
-                    <button>ПОДРОБНЕЕ</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 mt-5">
-                <div class="posts-grid__item3">
-                  <div class="posts-grid__item3-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/posts/post-3.jpeg';?>" alt="">
-                  </div>
-                  <div class="posts-grid__item3-txt">
-                    <div class="posts-grid__item3-title">
-                      Как не переплатить за 
-                      водоочистку.
-                    </div>
-                    <div class="posts-grid__item3-descr">
-                      Системы очистки воды требуют от 
-                      владельцев частных домов, не малых 
-                      затрат и к выбору нужно подходить 
-                      очень внимательно. Высокая стоимость 
-                      их связана с тем, что ...
-                    </div>
-                  </div>
-                  <div class="posts-grid__item3-button">
-                    <button>ПОДРОБНЕЕ</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 mt-5">
-                <div class="posts-grid__item4">
-                  <div class="posts-grid__item4-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/posts/post-4.jpeg';?>" alt="">
-                  </div>
-                  <div class="posts-grid__item4-txt">
-                    <div class="posts-grid__item4-title">
-                      10 рекомендаций: как 
-                      экономить деньги 
-                      на расходе воды
-                    </div>
-                    <div class="posts-grid__item4-descr">
-                      Если у Вас есть желание сохранить 
-                      свой бюджет и не тратиться на воду 
-                      больше чем необходимо, возьмите на 
-                      заметку несколько наших ...
-                    </div>
-                  </div>
-                  <div class="posts-grid__item4-button">
-                    <button>ПОДРОБНЕЕ</button>
-                  </div>
-                </div>
-              </div>
-
-              
-              <div class="col-12 mt-5">
-                <div class="posts-grid__item5">
-                  <div class="posts-grid__item5-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/posts/post-5.jpeg';?>" alt="">
-                  </div>
-                  <div class="posts-grid__item5-txt">
-                    <div class="posts-grid__item5-title">
-                      Подбор оборудования
-                    </div>
-                    <div class="posts-grid__item5-descr">
-                      Фильтры для загородного водоснаб-
-                      жения из скважины принципиально 
-                      отличаются от картриджных и малых 
-                      засыпных, которые стоят в городских 
-                      квартирах. По используемым 
-                      технологиям и высокой ...
-                    </div>
-                  </div>
-                  <div class="posts-grid__item5-button">
-                    <button>ПОДРОБНЕЕ</button>
-                  </div>
-                </div>
-              </div> -->
+           
               
             </div>
       </div>
@@ -181,5 +126,5 @@ get_header();
 
 
 <?php 
-get_footer(); 
+get_footer("white"); 
 ?>
