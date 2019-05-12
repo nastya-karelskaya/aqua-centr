@@ -13,7 +13,7 @@ get_header();
  <section class="card">
     <div class="container">
       <div class="row">
-        <div class="col-9">
+        <div class="col-12 col-xl-9">
           <div class="content">
             <div class="row">
               <div class="col-12">
@@ -62,9 +62,9 @@ get_header();
                 <div class="section-title-left">
                   <h1><?php the_title(); ?></h1>
                   <div class="section-img">
-                  <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+                  <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
                   </div>
                 </div>
               </div>
@@ -74,10 +74,11 @@ get_header();
                 <div class="card-descr">
                   <div class="card-descr__img-wrapper">
                   
-                    <div class="card-descr__img">
-                      <img src="<?php echo get_field("ava");?>" alt="" >
-                    </div>
+                    
                   </div>
+                  <div class="card-descr__img">
+                      <img src="<?php echo get_field("ava");?>" alt="<?php the_title(); ?>" >
+                    </div>
                   <div class="card-descr__txt">
                     <div class="card-descr__txt-title">
                         ОПИСАНИЕ
@@ -96,11 +97,31 @@ get_header();
                   </div>
                   
                 </div>
-                <div class="card-descr__big">
-                  <p>
-                    <?php echo get_field("descr_big"); ?>
-                  </p>
-                </div>
+
+                <?php $descr_big = get_field("descr_big"); 
+                  if($descr_big) {
+                
+                ?>
+                  <div class="card-descr__big">
+                    <?php echo $descr_big; ?>
+                    </div>
+
+                  <?php } ?>
+
+
+                
+                <?php $descr_big_2 = get_field("descr_big_2"); 
+                  if($descr_big_2) {
+                
+                ?>
+                  <div class="card-descr__big">
+                    <?php echo $descr_big_2; ?>
+                    </div>
+
+                  <?php } ?>
+                
+
+                
               </div>
               <div class="col-12 col-xl-5">
                 <div class="card-passport">
@@ -115,7 +136,7 @@ get_header();
                             <?php foreach( $fields as $name => $value ): ?>
                                 
                                   <?php 
-                                    if( ($name != "descr") && ($name != "descr_big")  && ($name != "price") && ($value))  {
+                                    if( ($name != "descr") && ($name != "descr_big") && ($name != "descr_big_2") && ($name != "price") && ($name != "ava") && ($value))  {
                                   ?>
                                   <li>
                                     <?php  echo $value; ?>
@@ -135,7 +156,7 @@ get_header();
 
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-xl-3">
         <?php wp_nav_menu( [
               'theme_location'  => 'right_card',
               'menu'            => '', 
@@ -175,7 +196,7 @@ get_header();
       <div class="modal-body">
         <form class="order-form">
           <div class="row">
-            <div class="col-6">
+            <div class="col-12">
               <div class="order-form__name">
                 <div class="order-form__name-txt">Ваше имя:</div>
                 <input type="text" class="order-form__name-input" placeholder="Имя">
@@ -185,7 +206,7 @@ get_header();
                 <input type="text" class="order-form__mail-input" placeholder="E-mail">
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-12">
               <div class="order-form__text">
                 <div class="order-form__text-txt">Ваше сообщение:</div>
                 <textarea class="order-form__text-input" placeholder="Сообщение"></textarea>

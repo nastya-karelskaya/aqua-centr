@@ -22,9 +22,9 @@ get_header();
                 <div class="section-title-left">
                   <h1>УСЛУГИ</h1>
                   <div class="section-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
                   </div>
                 </div>
               </div>
@@ -33,22 +33,42 @@ get_header();
             <div class="services-main__descr">
               <div class="row">
                 <div class="col-12 col-lg-6">
-                    <?php echo get_field("text_1",get_the_ID());?>               
+                  <div class="text">
+                    <?php echo get_field("text_1",get_the_ID());?>   
+                  </div>
+                                
                 </div>
                 <div class="col-12 col-lg-6">
-                    <?php echo get_field("text_1",get_the_ID());?>   
-                    <div>
-                        <a href="<?php echo get_field("phone_1",get_the_ID());?>"><?php echo get_field("phone_1",get_the_ID());?></a>    
-                        <a href="<?php echo get_field("phone_2",get_the_ID());?>"><?php echo get_field("phone_2",get_the_ID());?></a>  
-                    </div>
+                  <div class="text">
+                    <?php echo get_field("text_2",get_the_ID());?>   
+                      <div class="phones">
+                        <?php 
+                          $phone_1_raw = get_field("phone_1", get_the_ID()); 
+                          $phone_2_raw = get_field("phone_2", get_the_ID()); 
+                          //str_replace("(%body%)", "black", "<body text='%body%'>"); 
+                          $phone_1 = str_replace("(", "", $phone_1_raw); 
+                          $phone_1 = str_replace(")", "", $phone_1); 
+                          $phone_1 = str_replace(" ", "", $phone_1); 
+
+                          $phone_2 = str_replace("(", "", $phone_2_raw); 
+                          $phone_2 = str_replace(")", "", $phone_2); 
+                          $phone_2 = str_replace(" ", "", $phone_2); 
+                        ?>
+                        <a href="<?php echo 'tel:' . $phone_1;?>"><?php echo $phone_1_raw;?></a>    
+                        <a href="<?php echo 'tel:' . $phone_2;?>"><?php echo $phone_2_raw;?></a>   
+                      </div>
+
+                  </div>
+
+                    
                                   
                 </div>
               </div>
             </div>
 
             <div class="services-main__grid">
-            <div class="row">
-            <?php                 
+            <div class="row justify-content-center">
+              <?php                 
 
                   $args = array(
                     'sort_order'   => 'ASC',
@@ -76,7 +96,7 @@ get_header();
               ?>
               <div class="col-12 col-md-6">
                 <div class="services-main__item">
-                  <img src="<?php echo $obj_img;?>" alt="">
+                  <img src="<?php echo $obj_img;?>" alt=" <?php the_title();?>">
                   <div class="services-main__item-title-wrapper">
                     <h2 class="services-main__item-title">
                         <?php the_title(); ?>

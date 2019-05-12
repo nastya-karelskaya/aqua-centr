@@ -21,9 +21,9 @@ get_header();
              <h1>О компании</h1>
             </div>
            <div class="section-img">
-             <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-             <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-             <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+             <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+             <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+             <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
            </div>
          </div>
        </div>
@@ -47,7 +47,7 @@ get_header();
          <div class="col-12 col-xl-7">
            <div class="about-main__exp">
              <div class="about-main__exp-img">
-               <img src="<?php echo get_template_directory_uri() . '/assets/img/about/exp.jpg';?>" alt="">
+               <img src="<?php echo get_template_directory_uri() . '/assets/img/about/exp.jpg';?>" alt="Уникальный опыт">
                <div class="about-main__exp-drop"></div>
              </div>
              <div class="about-main__exp-txt">
@@ -88,7 +88,7 @@ get_header();
                  </p>
              </div>
              <div class="about-main__do-img">
-                 <img src="<?php echo get_template_directory_uri() . '/assets/img/about/do.jpg';?>" alt="">
+                 <img src="<?php echo get_template_directory_uri() . '/assets/img/about/do.jpg';?>" alt="Направления деятельности">
                  <div class="about-main__do-drop"></div>
                </div>
            </div>

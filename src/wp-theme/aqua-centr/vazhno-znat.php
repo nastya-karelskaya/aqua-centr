@@ -20,9 +20,9 @@ get_header();
             <h1>Важно знать</h1>
           </div>
           <div class="section-img">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ get_header();
 
     <div class="posts-grid">
       <div class="container">
-          <div class="row">
+          <div class="row justify-content-center">
 
             <?php
                 $args = array(
@@ -51,29 +51,34 @@ get_header();
                   'post_status'  => 'publish',
                 ); 
                 $pages = get_pages( $args );
-                $pages_count = count($pages);
-                $counter=1;
+                // $pages_count = count($pages);
+                // $counter=1;
                   
                 foreach( $pages as $post ){
                   setup_postdata( $post );
                   $post_img = get_field("ava", get_the_ID());
-                  $post_exerp =  substr(get_field("par_1", get_the_ID()), 0, 75);
+                  $post_exerp =  substr(get_field("par_1", get_the_ID()), 0, 173);
+                  //$post_exerp =  substr($post_exerp, 0, 170) . '...';
+                  //d0
+                  $post_exerp = str_replace('d0', '', $post_exerp);
+                  //$post_exerp .= '...';
 
-                  if($counter != $pages_count) {
+                  //if($counter != $pages_count) {
                   
             ?>
 
               <div class="col-12 col-lg-6">
-                <div class="posts-grid__item">
+                <div class="posts-grid__item ">
                   <div class="posts-grid__item-img">
-                    <img src="<?php echo $post_img;?>" alt="">
+                    <img src="<?php echo $post_img;?>" alt=" <?php the_title();?>">
                   </div>
                   <div class="posts-grid__item-txt">
                     <a href="<?php the_permalink();?>" class="posts-grid__item-title">
                       <h2><?php the_title(); ?></h2>
                     </a>
                     <div class="posts-grid__item-descr">
-                    <?php echo $post_exerp; ?> ...
+                    <?php echo $post_exerp; ?> 
+                    ...
                     </div>
                   </div>
                   <div class="posts-grid__item-button">
@@ -82,35 +87,36 @@ get_header();
                 </div>
               </div>
 
-              <?php 
-                  }
-                  else {
+              <!-- <?php 
+                  //}
+                 // else {
                   
-              ?>
+              ?> -->
 
-              <div class="col-12">
-                <div class="posts-grid__item">
+              <!-- <div class="col-12">
+                <div class="posts-grid__item item-last">
                   <div class="posts-grid__item-img">
-                    <img src="<?php echo $post_img;?>" alt="">
+                    <img src="<?php //echo $post_img;?>" alt=" <?php the_title();?>">
                   </div>
                   <div class="posts-grid__item-txt">
-                    <a href="<?php the_permalink();?>" class="posts-grid__item-title">
-                      <h2><?php the_title(); ?></h2>
+                    <a href="<?php //the_permalink();?>" class="posts-grid__item-title">
+                      <h2><?php //the_title(); ?></h2>
                     </a>
                     <div class="posts-grid__item-descr">
-                    <?php echo $post_exerp; ?> ...
+                    <?php //echo $post_exerp; ?> 
+                    ...
                     </div>
                   </div>
                   <div class="posts-grid__item-button">
-                    <a href="<?php the_permalink();?>" class="button">ПОДРОБНЕЕ</a>
+                    <a href="<?php //the_permalink();?>" class="button">ПОДРОБНЕЕ</a>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
 
               <?php
-                  }
-                  $counter = $counter + 1;
+                  // }
+                  // $counter = $counter + 1;
                 }
                   
                 wp_reset_postdata(); // сброс
@@ -126,5 +132,5 @@ get_header();
 
 
 <?php 
-get_footer("white"); 
+get_footer("gray"); 
 ?>

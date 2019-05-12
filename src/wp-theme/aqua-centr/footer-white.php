@@ -18,13 +18,13 @@
   <footer class="footer white">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-sm-5 col-md-4 col-lg-2">
+        <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
           <div class="footer-logo">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/logo-bottom.png';?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/logo-bottom.png';?>" alt="Логотип">
           </div>
   
         </div>
-        <div class="col-12 col-sm-7 col-md-8 col-lg-10">
+        <div class="col-12 col-sm-7 col-md-8 col-lg-9 col-xl-10">
        
           <?php wp_nav_menu( [
             'theme_location'  => 'bottom',
@@ -52,7 +52,7 @@
                 <div class="footer-menu__items">
                   <div class="footer-menu__phones">
                     <div class="phone-icon">
-                      <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/phone-blue.png';?>" alt="">
+                      <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/phone-blue.png';?>" alt="Телефон">
                     </div>
                     <div class="phone-txt">
                       <a href="tel:88142280201">8 (8142) 28 02 01</a>
@@ -61,7 +61,7 @@
                   </div>
                   <div class="footer-menu__time">
                       <div class="time-icon">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/clock-blue.png';?>" alt="">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/clock-blue.png';?>" alt="Режим работы">
                       </div>
                       <a class="time-txt">Пн-пт: с 9:00 до 18:00</a>
                     </div>
@@ -69,14 +69,14 @@
                   
                   <div class="footer-menu__map">
                     <div class="map-icon">
-                      <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/map-blue.png';?>" alt="">
+                      <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/map-blue.png';?>" alt="Местоположение">
                     </div>
                     <a class="map-txt">г. Петрозаводск, 
                         ул. Онежской флотилии, 29а</a>
                   </div>
                   <div class="footer-menu__mail">
                       <div class="mail-icon">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/mail-blue.png';?>" alt="">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/mail-blue.png';?>" alt="E-mail">
                       </div>
                       <a href="mailto:ac-ptz@mail.ru" class="mail-txt">ac-ptz@mail.ru</a>
                     </div>
@@ -98,7 +98,7 @@
           </div>
           
           <div class="col-12 col-md-6">
-            <a class="footer-bottom__politics">
+            <a class="footer-bottom__politics" href="<?php echo get_site_url() . '/privacy-policy/';?>">
                 Политика конфиденциальности
             </a>
           </div>

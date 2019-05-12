@@ -1,12 +1,53 @@
 @media(max-width: 1399px)
-  .services
-    .services-item
-      width: 23.9%
-      &:last-child 
-        margin-top: 100px
 
-      &__title
-        &-wrapper
+  .services
+    padding-top: 60px
+    padding-bottom: 0
+    &::before 
+      height: 370px
+      top: 255px
+    &-row__wrapper
+      background-color: transparent
+      box-shadow: none
+      margin-top: 20px
+      //display: none
+    
+    &-item, &-item1, &-item2, &-item3, &-item4, &-item5
+      width: 28.9%
+      padding: 15px 0px
+      height: 200px
+      //background-color: rgba(255, 255, 255, .8)
+      
+      background-color: $white
+      box-shadow: 0 0 12px rgba(0,0,0,0.1)
+      border-radius: 30px
+
+      position: relative 
+      &__button 
+        bottom: -25px
+        // position: relative
+        // top: unset
+        // left: unset
+        // margin: 0 auto
+        // bottom: unset
+        // display: block
+        // max-width: 150px 
+      &__img 
+        img 
+          width: auto
+      &:nth-child(2)
+        margin: 0 4%
+      &:nth-child(4)
+        margin-right: 4%
+
+      &:nth-child(4), &:nth-child(5)
+        margin-top: 50px
+
+    &:last-child 
+      margin-top: 100px
+
+    &__title
+      &-wrapper
           
   
   
@@ -25,6 +66,7 @@
   
 
   .sidebar 
+    margin-top: 20px
     .menu-item-has-children
       &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4)
         width: 49%
@@ -35,9 +77,25 @@
           margin-bottom: 40px
 
       
+
+  .products-grid
+    margin-top: 40px
+    padding-bottom: 30px
+
+  section 
+    //padding: 60px 0px
+
+    &.services 
+      //padding: 60px 0px
+
+
       
 
+  .order-form, .order form
+    top: 35px
 
+  .order-photo
+    width: 55%
 
 
   .picture
@@ -73,6 +131,8 @@
           
   
   .contacts 
+    &-grid
+      margin-top: 0px
     &-info
       width: 100%
 
@@ -83,11 +143,11 @@
       
       width: 500px
       margin: 0 auto
-      margin-top: 100px
+      margin-top: 130px
 
   .services
     .services-item
-      width: 29.9%
+      width: 28.9%
       &:last-child 
         //margin-top: 100px
 
@@ -114,10 +174,28 @@
 
   .about-main__do-txt 
     padding-top: 40px
+  .about-main__do-descr
+    margin-top: 0px
 
   .about-main__info 
     margin-top: 50px
 
+  .footer-menu
+    &__contacts
+      width: 29%
+    &s
+      width: 70%
+    
+      li.menu-item-has-children
+        width: 49%
+        &:last-child
+          display: none
+
+  .posts-grid__item
+    height: 220px
+    &-descr 
+      p 
+        line-height: 18px
 
 
 @media(max-width: 991px)
@@ -191,11 +269,6 @@
             display: none
         
 
-
-
-
-
-
   .header-top__wrapper
     justify-content: flex-start
   .header-top__time, .header-top__map, .header-top__mail 
@@ -223,6 +296,42 @@
     img 
       width: 100%
 
+  section 
+    padding: 60px 0px
+
+    &.advantages
+      padding: 50px 0px 70px 0px
+
+    &.services 
+      padding: 40px 0px 0px 0px
+
+    .section-title, .section-title-left
+      h1, h2 
+        font-size: 28px
+        text-align: center
+
+    .section-title-left
+      flex-direction: column
+      align-content: center 
+      justify-content: center 
+      align-items: center 
+      justify-items: center 
+      .section-img 
+        margin: 0 auto 
+        margin-top: 15px
+      h1, h2 
+        max-width: 500px
+
+    .section-subtitle
+      margin-bottom: 30px  
+  
+
+
+  .search 
+    .subtitle 
+      text-align: center
+      h2
+        font-size: 20px
 
   .picture
     height: fit-content
@@ -297,20 +406,36 @@
   .footer-menu__mail
 
 
-  .contacts-grid
-    margin-top: 30px
+  .contacts
+    &-grid
+      margin-top: 30px
+    .section-subtitle
+      margin-bottom: 0
 
 
   
 
   .products
+    &-grid 
+      //padding-top: 60px
+      margin-top: 0
     .products-item
       width: 80%
       margin: 0 auto 30px auto
       &__img
         //height: 140px 
         //width: 150px
+    &-left__font
+      top: 150px
 
+    &-main 
+      &__grid 
+        margin-top: 60px
+        .products-main__item 
+          height: 215px
+          width: 100%
+          max-width: 470px  
+          margin: 0 auto 70px auto
   
     
 
@@ -324,18 +449,67 @@
       height: 70% 
       background-repeat-y: repeat
       background-size: auto
+      top: 185px
+
+
+    &-page 
+      &-list 
+        margin-top: 5px
+      &-descr 
+        &:first-child
+          margin-top: 27px
+
+        p 
+          text-align: justify
+          text-align-last: center
+          &:last-child
+            margin-bottom: 0
+      h2
+        margin-top: 25px
+        text-align: center
+
+    
 
     .services-item
-      width: 47.9%
-      &:nth-child(3), &:nth-child(4) 
-        margin-top: 110px
+      width: 43.9%
+      &:nth-child(1), &:nth-child(3)
+        margin: 0 2% 0 0
+      &:nth-child(2), &:nth-child(4)
+        margin: 0 0 0 2%
+
+      &:nth-child(3), &:nth-child(4), &:nth-child(5) 
+        margin-top: 60px
 
       &__title
         &-wrapper
 
+    &-row__wrapper
+      margin-top: 0
+
+  .services-main
+    &__item 
+      padding: 20px 20px 30px 20px
+    &__descr
+      margin-top: 30px
+      .text 
+        margin-bottom: 15px
+        text-align: justify
+        text-align-last: center
+
+      .phones
+        margin-top: 10px
+        a 
+          //padding-top: 10px
+
+    &__grid 
+      margin-top: 30px
+
+  .advantages-row
+    margin-top: 15px
+
 
   .advantages-item2
-    margin-top: 40px
+    margin-top: 30px
     .advantages-item__title
       margin-left: -105px
       left: 50%
@@ -361,6 +535,9 @@
 
 
   .order 
+    padding-bottom: 70px
+    &-subtitle
+      margin-top: 40px
     .order
       &-form
         padding: 30px 35px 40px 35px
@@ -379,16 +556,65 @@
         &__wrapper 
           width: 80%
           text-align: center 
-          margin: 50px auto 0px auto 
+          margin: 40px auto 0px auto 
         left: 50%
         margin-left: -218px
 
       &-txt 
         margin-top: 50px
 
+  .posts-grid
+    margin-top: 40px
+    &__item
+      width: 100%
+      max-width: 500px
+      margin: 0 auto
+      margin-bottom: 60px
+      &.item-last
+        width: 100%
+
+  .sidebar  
+    height: fit-content
+
 
 
 @media(max-width: 767px)
+  .services
+    &::before
+      height: 81%
+      // height: 70% 
+      // background-repeat-y: repeat
+      // background-size: auto
+      // top: 185px
+
+    .services-item
+
+      &:nth-child(1), &:nth-child(3)
+        margin: 0 0 45px 0
+      &:nth-child(2), &:nth-child(4)
+        margin: 0 0 45px 0
+
+      &:nth-child(3), &:nth-child(4), &:nth-child(5) 
+        margin-top: 0px
+        
+      width: 100%
+      max-width: 340px  
+      padding: 20px 0px
+      //margin-bottom: 45px
+     
+
+  section 
+    .section-title, .section-title-left
+      h1, h2 
+        font-size: 25px
+    &.posts
+      padding-bottom: 60px
+    .section-title-left
+      .section-img 
+        display: none
+  
+
+
   .header-nav .navbar.navbar-expand-lg 
     .navbar-collapse
       width: 550px
@@ -429,9 +655,10 @@
     right: 15px
     top: 10px
     .phone-txt
-      width: 150px
+      width: 120px
       a 
         font-weight: bold 
+        text-align: right
 
   .header-top__wrapper
     
@@ -468,9 +695,18 @@
 
         &.link-pumps
          
+  .about
+    .about 
+      &-txt
+        margin-top: 30px
+        &__descr
+          margin-bottom: 15px
+
+
   .about-main__subtitle
     text-align: justify
     text-align-last: center
+    margin-bottom: 15px
 
   .about-main__exp-img, .about-main__do-img
     display: none
@@ -488,12 +724,15 @@
     margin-top: 0px
     text-align: justify
     text-align-last: center
+    margin-bottom: 0
 
   .about-main__info 
     margin-top: 40px
 
+  .footer 
+    padding: 25px 0px 0px 0px
 
-
+    
   
   .footer-menu__contacts
     margin-top: 7px
@@ -506,6 +745,7 @@
 
   .footer-bottom
     padding: 15px 
+    margin-top: 25px
 
   .footer-bottom__copy, .footer-bottom__politics
     text-align: center
@@ -536,6 +776,9 @@
       //margin: 0 auto 30px auto
       &__img
 
+
+  .advantages-row
+    margin-top: 40px
 
   .advantages-item2
     margin-top: 20px
@@ -601,9 +844,47 @@
           // margin-bottom: 40px     
      
 
+  .posts-grid
+    //margin-top: 40px
+    &__item
+      //width: 100%
+      //max-width: 500px
+      //margin: 0 auto
+      margin-bottom: 40px
     
 
+  #orderModal 
+    .modal-dialog 
+      .modal-body
+        padding: 10px 10px 40px 10px
+
+      .order-form
+        padding: 25px
+        &__button
+          right: 50%
+          margin-right: -80px
+
+
 @media(max-width: 575px)
+  .services-row__wrapper 
+    padding-top: 30px
+
+  section 
+    padding: 50px 0px 
+    &.services 
+      padding: 20px 0px 0px 0px
+    &.advantages, &.posts-page 
+      padding: 40px 0px 60px 0px
+    &.posts
+      padding-bottom: 30px
+
+    .section-title, .section-title-left 
+      h1, h2 
+        font-size: 23px
+
+  .sidebar 
+    margin-top: 10px
+
   .header-top__wrapper
     // height: 100%
     // padding: 5px 0px
@@ -624,23 +905,33 @@
     padding: 9px 17px 11px 17px
     margin-left: 15px
 
-  
-
-
-
-
-
   .about-main__info 
     padding: 20px 20px 10px 20px
+    margin-top: 30px
+    p 
+      margin-bottom: 10px
 
-    
-  
+  .about-main__subtitle
+    margin-top: 20px
+  .about-main__exp-title, .about-main__do-title
+    padding: 0px 5px
+    text-align: center
+
+  .about-main__do-txt
+    padding-top: 30px
 
   .header-top__mail 
     // display: block
 
   .header-top__phones 
     margin-left: 25px
+
+  .footer 
+    padding: 20px 0px 0px 0px
+
+    &-bottom
+      margin-top: 20px
+      padding: 10px 5px
 
   .footer-menu__contacts, .footer-logo 
     text-align: center
@@ -655,7 +946,7 @@
     margin: 0 auto
 
     .mail-icon 
-      float: unset
+      //float: unset
 
     .mail-txt
       margin-left: 0
@@ -676,25 +967,49 @@
       img 
         margin-bottom: 20px
 
+  .footer-menu__mail
+    width: 150px
+    display: block
+    text-align: center
+    margin: 0 auto
+    .mail-txt, .mail-icon 
+      display: inline-block
+    .mail-icon 
+      float: none
+
+    .mail-txt
+
+
   .contacts
+    &-map 
+      // right: 80%
+      // width: 20%
     &-grid 
       margin-top: 10px
 
 
   .products
-    .products-item
+    .products-item, .products-item1, .products-item2, .products-item3, .products-item4
+      padding: 25px
       text-align: center
       height: fit-content
       width: 80%
       padding: 30px
-      &__title
+      &__title 
+        font-size: 19px
         text-align: center
-      //margin: 0 auto 30px auto
-      &__img
+
+      &__img 
         float: unset
         margin: 0 auto
         padding: 0
-        margin-bottom: 15px
+        margin-bottom: 10px
+
+      &__descr 
+        margin-top: 10px
+      &__txt-subtitle
+        padding-left: 0
+        font-size: 18px
 
       &__txt-list
         text-align: left
@@ -708,8 +1023,19 @@
         // width: 140px
         // height: 120px
 
+    .products-grid 
+      padding-top: 30px
+      //padding-bottom: 0
 
   .services
+    &-page
+      &-descr
+        &:first-child
+          margin-top: 20px
+    &-main__descr
+      margin-top: 20px
+    &-main__grid 
+      margin-top: 20px
     .services-item
       width: 100%
       
@@ -744,7 +1070,10 @@
 
 
   .order 
+
     .order
+      &-subtitle
+        margin-top: 30px
       &-form
         //padding: 30px 35px 40px 35px
         &__button
@@ -759,13 +1088,22 @@
         img 
           
         &__wrapper 
+          margin-top: 30px
           width: 100%
         
 
       &-txt 
         
+  .posts-grid
+    margin-top: 30px
+
+  .posts-page__content
+    margin-top: 20px
+    img 
+      margin-bottom: 10px
 
 @media(max-width: 500px)
+  
   .products
     .products-item
       
@@ -773,11 +1111,50 @@
       //padding: 30px
 
   .products-main
+    &__grid 
+      .products-main__item
+        height: fit-content
+        text-align: center
+        padding: 40px 15px 30px 15px
+        &-title 
+          text-align: center
+          &-wrapper 
+            width: 100%
+            left: 0
+        &-img 
+          float: none
+          margin: 0 auto
+          height: 150px
+          width: 100%  
+        &-descr
+          padding-left: 0
+          &-title
+            padding-left: 0
+            margin-top: 10px
+            margin-bottom: 5px
+            
+
+          &-list 
+            text-align: left
+            padding-left: 12%
+
+        &-button 
+          right: 50%
+          margin-right: -80px
+          //bottom: -30px
+
+
+
   .section-img 
     display: none
 
   .posts-grid__item 
     flex-direction: column
+    height: unset 
+    max-width: 370px
+    padding: 20px
+    margin-bottom: 45px
+
   .posts-grid__item-img
     margin:  0 auto
     margin-bottom: 20px
@@ -788,35 +1165,67 @@
 
   .posts-grid__item-txt 
     text-align: center 
+    padding-left: 0
+
+  .card-descr 
+    flex-direction: column
+    justify-content: center
+    align-content: center 
+    justify-items: center 
+    align-items: center
+    &__img 
+      margin-left: 0
+      
+      &-wrapper 
+        top: 25px 
+        //left: 0
+
+    &__txt 
+      margin-left: 0
+      //align-content: center
+      //justify-items: center
+      text-align: center
+
 
 
 @media(max-width: 400px)
+  .header-nav 
+    .navbar 
+      .navbar-toggler
+        top: -60px
+
   .header-top__menu-mobile
     width: 60px
   .header-top__logo-mobile
     display: none
 
   .header-top__phones
-    margin-top: 5px
+    margin-top: 0px
     position: relative
     right: unset
     top: unset
+    text-align: right
     .phone-txt
       margin-left: 3px
       display: inline
+      width: fit-content
       a 
         font-weight: bold 
         
     .phone-icon
       display: inline
+      img 
+        margin-top: 0px
+        margin-bottom: 0
+        margin-right: 5px
 
   .header-top__phones .phone-txt a
     display: inline-block
   .header-top__phones .phone-txt a:last-child
-    margin-left: 5px
+    margin-left: 20px
 
-  .header-top__phones .phone-icon img 
-    margin-bottom: 5px
+  //.header-top__phones .phone-icon 
+    //margin-bottom: 5px
 
 
 
@@ -932,3 +1341,101 @@
 // @media(max-width: 350px)
 
 // @media(max-width: 991px)
+
+@media(min-width: 768px)
+
+  button, .button 
+    &:hover 
+      background-color: $dark
+      border-color: $dark
+      color: $white 
+      text-decoration: none
+
+      transition: all .5s 
+
+
+
+  .header 
+    &-nav
+      .navbar
+        &-toggler
+          &:hover, &:focus 
+            border-color: $marine
+
+        &-nav 
+          li 
+            a
+              &:hover 
+                color: $marine
+                transition: .3s
+                text-decoration: none 
+
+
+  section
+    .section
+      &-subtitle
+        a
+          &:hover 
+            color: $marine
+            font-weight: bold
+            text-decoration: none
+
+
+  .footer 
+    &-bottom 
+      &__politics
+        &:hover 
+          cursor: pointer
+          text-decoration: underline
+          transition: .3s
+
+
+
+
+  .products
+    &-category
+      &__item
+        &-button
+          a
+            &:hover 
+              color: $white
+              text-decoration: none
+
+  .posts
+    &-grid
+      &__item
+        &-title h2
+          &:hover
+            text-decoration: none
+            color: $dark
+
+        &-button
+          .button 
+            &:hover 
+              background-color: $dark
+              transition: .4s all 
+
+  .posts-page
+    &-grid 
+      &__item 
+        &-title
+          &:hover
+            text-decoration: none
+            color: $dark 
+
+        &-button 
+          .button
+            &:hover 
+              background-color: $dark
+              transition: .4s all
+
+  .picture
+    &-content 
+      a
+        &:hover 
+          cursor: pointer 
+          color: $marine 
+          background-color: $white
+          border: 2px solid #15244f
+          font-size: 13px
+

@@ -35,7 +35,10 @@
             <div class="header-top__wrapper">
               <div class="header-top__menu-mobile"></div>
               <div class="header-top__logo-mobile">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/header/logo-top.png';?>" alt="">
+                <a href="<?php echo get_site_url();?>">
+                  <img src="<?php echo get_template_directory_uri() . '/assets/img/header/logo-top.png';?>" alt="Логотип">
+                </a>
+                
               </div>
 
               <div class="header-top__phones">
@@ -50,20 +53,20 @@
             
               <div class="header-top__mail">
                 <div class="mail-icon">
-                  <img src="<?php echo get_template_directory_uri() . '/assets/img/header/mail.png';?>" alt="">
+                  <img src="<?php echo get_template_directory_uri() . '/assets/img/header/mail.png';?>" alt="Почта">
                 </div>
                 <a href="mailto:ac-ptz@mail.ru" class="mail-txt">ac-ptz@mail.ru</a>
               </div>
               <div class="header-top__time">
                 <div class="time-icon">
-                  <img src="<?php echo get_template_directory_uri() . '/assets/img/header/clock.png';?>" alt="">
+                  <img src="<?php echo get_template_directory_uri() . '/assets/img/header/clock.png';?>" alt="Режим работы">
                 </div>
                 <a class="time-txt">Пн-пт: с 9:00 до 18:00</a>
               </div>
             
               <div class="header-top__map">
                 <div class="map-icon">
-                  <img src="<?php echo get_template_directory_uri() . '/assets/img/header/map.png';?>" alt="">
+                  <img src="<?php echo get_template_directory_uri() . '/assets/img/header/map.png';?>" alt="Местоположение">
                 </div>
                 <a class="map-txt">г. Петрозаводск, <br> 
                     ул. Онежской флотилии, 29а</a>
@@ -82,13 +85,13 @@
         
         <nav class="navbar navbar-expand-lg">
           <a class="navbar-brand" href="<?php echo home_url(); ?>">
-              <img src="<?php echo get_template_directory_uri() . '/assets/img/header/logo-top.png';?>"  alt="">
+              <img src="<?php echo get_template_directory_uri() . '/assets/img/header/logo-top.png';?>"  alt="Логотип">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <div class="navbar-toggler-icon">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
             </div>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">

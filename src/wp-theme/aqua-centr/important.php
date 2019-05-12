@@ -68,9 +68,9 @@ get_header();
                 <div class="section-title-left">
                   <h1><?php the_title();?></h1>
                   <div class="section-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
                   </div>
                 </div>
               </div>
@@ -79,9 +79,12 @@ get_header();
             <div class="row">
               <div class="col-12">
                 <div class="posts-page__content">
+                  <?php $img = get_field("image"); 
+                        if($img) {
+                  ?>
 
-                 <div class="posts-page__content-img ">
-                    <img src="<?php echo get_field("image");?>" alt="">
+                  <div class="posts-page__content-img ">
+                    <img src="<?php echo $img;?>" alt="<?php the_title();?>">
                   </div>
                   
 
@@ -90,35 +93,258 @@ get_header();
 
 
                   <?php 
+                        }
                       
                       $fields = get_fields();
 
 
-                      if( $fields ) {
-                        foreach( $fields as $name => $value ) {
-                            if( ($name !='image') && ($name !='ava') ) {
-
+                      
                   ?>
-                 
 
-            
+                    <div>
+
+                      <?php 
+                        if($fields['subtitle']) {
+                      ?>
+
+                        <h2>
+                          <?php 
+                              echo $fields['subtitle'];                         
+                          ?>
+                        </h2>
                         
-                      <p>
-                        <?php echo $value; ?>
-                      </p>
-                    <?php 
-                      }
-                     
-                    }
-                      } ?>
-                            
-               
+
+                      <?php 
+                        }
+                      ?>
+
+
+                      <?php 
+                        if($fields['par_1']) {
+                      ?>
+
+                        <p>
+                          <?php 
+                              echo $fields['par_1'];                         
+                          ?>
+                        </p> 
+
+                      <?php 
+                        }
+                      ?>
+
+                    </div>
+
+                    <div>
+
+                        <?php 
+                          if($fields['subtitle_2']) {
+                        ?>
+
+                          <h2>
+                            <?php 
+                                echo $fields['subtitle_2'];                         
+                            ?>
+                          </h2>
+                          
+
+                        <?php 
+                          }
+                        ?>
+
+
+                        <?php 
+                          if($fields['par_2']) {
+                        ?>
+
+                          <p>
+                            <?php 
+                                echo $fields['par_2'];                         
+                            ?>
+                          </p> 
+
+                        <?php 
+                          }
+                        ?>
+
+                    </div>
+
+                    <div>
+
+                      <?php 
+                        if($fields['subtitle_3']) {
+                      ?>
+
+                        <h2>
+                          <?php 
+                              echo $fields['subtitle_3'];                         
+                          ?>
+                        </h2>
+                        
+
+                      <?php 
+                        }
+                      ?>
+
+
+                      <?php 
+                        if($fields['par_3']) {
+                      ?>
+
+                        <p>
+                          <?php 
+                              echo $fields['par_3'];                         
+                          ?>
+                        </p> 
+
+                      <?php 
+                        }
+                      ?>
+
+                    </div>
+
+                    <div>
+
+                      <?php 
+                        if($fields['subtitle_4']) {
+                      ?>
+
+                        <h2>
+                          <?php 
+                              echo $fields['subtitle_4'];                         
+                          ?>
+                        </h2>
+                        
+
+                      <?php 
+                        }
+                      ?>
+
+
+                      <?php 
+                        if($fields['par_4']) {
+                      ?>
+
+                        <p>
+                          <?php 
+                              echo $fields['par_4'];                         
+                          ?>
+                        </p> 
+
+                      <?php 
+                        }
+                      ?>
+
+                    </div>
+
+
+                    <div>
+
+                      <?php 
+                        if($fields['subtitle_5']) {
+                      ?>
+
+                        <h2>
+                          <?php 
+                              echo $fields['subtitle_5'];                         
+                          ?>
+                        </h2>
+                        
+
+                      <?php 
+                        }
+                      ?>
+
+
+                      <?php 
+                        if($fields['par_5']) {
+                      ?>
+
+                        <p>
+                          <?php 
+                              echo $fields['par_5'];                         
+                          ?>
+                        </p> 
+
+                      <?php 
+                        }
+                      ?>
+
+                    </div>
+
+
+                    <div>
+
+                        <?php 
+                          if($fields['subtitle_6']) {
+                        ?>
+
+                          <h2>
+                            <?php 
+                                echo $fields['subtitle_6'];                         
+                            ?>
+                          </h2>
+                          
+
+                        <?php 
+                          }
+                        ?>
+
+
+                        <?php 
+                          if($fields['par_6']) {
+                        ?>
+
+                          <p>
+                            <?php 
+                                echo $fields['par_6'];                         
+                            ?>
+                          </p> 
+
+                        <?php 
+                          }
+                        ?>
+
+                    </div>
+
+                    <div>
+
+                        <?php 
+                          if($fields['subtitle_7']) {
+                        ?>
+
+                          <h2>
+                            <?php 
+                                echo $fields['subtitle_7'];                         
+                            ?>
+                          </h2>
+                          
+
+                        <?php 
+                          }
+                        ?>
+
+
+                        <?php 
+                          if($fields['par_7']) {
+                        ?>
+
+                          <p>
+                            <?php 
+                                echo $fields['par_7'];                         
+                            ?>
+                          </p> 
+
+                        <?php 
+                          }
+                        ?>
+
+                    </div>
+
+
 
 
                 </div>
-
-              
-
                 
               </div>
             </div>
@@ -160,5 +386,5 @@ get_header();
 
 <?php
 // get_sidebar();
-get_footer("white");
+get_footer("gray");
 ?>

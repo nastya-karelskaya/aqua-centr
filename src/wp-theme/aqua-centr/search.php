@@ -4,12 +4,13 @@
  <section class="section section-first search ">
       <div class="container">
    
-        <div class="content">
+        
 
           <div class="row">
-            <div class="col-9">
+            <div class="col-12 col-xl-9">
+            <div class="content">
 
-              <div class="title">
+              <div class="section-title-left">
                 <h1>
                 Результаты поиска по запросу: "<?php echo $_GET['s'];?>"
                 </h1>
@@ -39,10 +40,11 @@
 
 
               </div>
+            </div>
 
             </div>
 
-            <div class="col-3">
+            <div class="col-12 col-xl-3">
           <?php wp_nav_menu( [
               'theme_location'  => 'right_search',
               'menu'            => '', 

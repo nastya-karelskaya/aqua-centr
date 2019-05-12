@@ -23,15 +23,15 @@ get_header();
                 <div class="section-title-left">
                   <h1>ОБОРУДОВАНИЕ</h1>
                   <div class="section-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
                   </div>
                 </div>
               </div>
             </div>
             <div class="products-main__grid">
-              <div class="row">
+              <div class="row justify-content-center">
 
                 <?php 
                   //$post_obj = get_page_by_title( 'насосы и принадлежности', OBJECT, 'page' );
@@ -79,7 +79,7 @@ get_header();
                       <div class="products-main__item-img">
                         <img src="<?php 
                           echo $obj_img;
-                        ?>" alt="">
+                        ?>" alt="<?php the_title(); ?>">
                       </div>
                       <div class="products-main__item-descr">
                         <div class="products-main__item-descr-title">

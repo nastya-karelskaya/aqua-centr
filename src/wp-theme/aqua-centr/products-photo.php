@@ -60,9 +60,9 @@ get_header();
               
                   <h1><?php the_title(); ?></h1>
                   <div class="section-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
                   </div>
                 </div>
               </div>
@@ -71,9 +71,58 @@ get_header();
             <div class="products-category__grid">
               <div class="row">
                 <div class="col-12">
+
+                  <?php 
+                      $fields = get_fields(); 
+                        if($fields['product_img']) { 
+                  ?>
+                    <div class="products-category__photo">
+                      <img src="<?php echo $fields['product_img'];?>" alt=" <?php the_title();?>">
+                    </div>
+
+                  <?php 
+                        }
+                  ?>
+
+                  <?php 
+                      
+                        if($fields['product_img_2']) { 
+                  ?>
+                    <div class="products-category__photo">
+                      <img src="<?php echo $fields['product_img_2'];?>" alt=" <?php the_title();?>">
+                    </div>
+
+                  <?php 
+                        }
+                  ?>
+
+                  <?php 
+                      
+                      if($fields['product_img_3']) { 
+                ?>
                   <div class="products-category__photo">
-                    <img src="<?php echo get_field("product_img");?>" alt="">
+                    <img src="<?php echo $fields['product_img_3'];?>" alt=" <?php the_title();?>">
                   </div>
+
+                <?php 
+                      }
+                ?>
+
+                <?php 
+                      
+                      if($fields['product_img_4']) { 
+                ?>
+                  <div class="products-category__photo">
+                    <img src="<?php echo $fields['product_img_4'];?>" alt=" <?php the_title();?>">
+                  </div>
+
+                <?php 
+                      }
+                ?>
+
+
+
+
                 </div>
               </div>
             </div>

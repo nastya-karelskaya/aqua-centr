@@ -1,4 +1,4 @@
-=== svartechkom ===
+=== aqua-centr ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called svartechkom.
+A starter theme called aqua-centr.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Description
 
 = Does this theme support any plugins? =
 
-svartechkom includes support for Infinite Scroll in Jetpack.
+aqua-centr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

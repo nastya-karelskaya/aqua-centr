@@ -32,10 +32,12 @@
     &__big
       font-size: 14px
       background-color: $white
-      padding: 20px
+      padding: 20px 20px 10px 20px
       margin-top: 30px
       border-radius: 30px
       box-shadow: 0 0 12px rgba(0,0,0,0.1)
+      text-align: left 
+      text-indent: 10px
 
     &__img
       padding: 15px
@@ -43,14 +45,21 @@
 
       width: fit-content
       height: fit-content
+      min-width: 200px
+      min-height: 200px
+
+      margin-top: 15px
+      margin-left: 15px
       
 
       text-align: center
       // position: relative
       border-radius: 30px
       box-shadow: 0 0 12px rgba(0,0,0,0.1)
+      z-index: 1
       img 
-        max-width: 180px
+        max-width: 170px
+        max-height: 170px
 
       &-wrapper 
         padding-top: 15px
@@ -62,13 +71,14 @@
         background-color: $marine
         border-radius: 30px
         box-shadow: 0 0 12px rgba(0,0,0,0.1)
+        position: absolute
         // position: absolute 
         // top: -20px
         // left: -20px
 
 
     &__txt 
-      margin-left: 40px
+      margin-left: 20px
       padding-top: 20px
       display: flex 
       flex-direction: column 
@@ -96,7 +106,7 @@
     border-radius: 20px
     box-shadow: 0 0 12px rgba(0,0,0,0.1)
     background-color: #ffffff
-    padding: 20px
+    padding: 17px
 
     &__title 
       
@@ -105,15 +115,17 @@
       font-weight: bold
       color: $marine 
     &__list 
-      padding-left: 15px
+      padding-left: 13px
       list-style-image: url("../img/dot.png")
       li
-        font-size: 14px 
+        font-size: 13px 
 
 
 #orderModal 
   .modal-dialog
-    max-width: 800px
+    margin-top: 50px
+    max-width: 500px
+    padding: 0px 10px
 
     button.close 
       width: 50px
@@ -121,16 +133,33 @@
     .modal-title 
       font-size: 16px
       font-family: Roboto Mono
-      margin-left: 45%
+      margin-left: 40%
 
     .order-form 
       width: 100%
+      max-width: 400px
       position: relative
       top: unset
-      left: 0
+      left: unset
+      margin: 0 auto 
+      padding: 30px
+      .order-form__mail, .order-form__text
+        margin-top: 15px
 
-    .modal-body 
-      padding: 20px 20px 40px 20px
+    .modal
+      &-body 
+        padding: 20px 20px 40px 20px
+
+      &-content 
+        border-radius: 20px
+
+      &-header 
+        border-bottom: 0
+        padding-bottom: 0
+
+      &-title 
+        font-weight: bold
+        font-size: 18px
 
 
 

@@ -11,8 +11,8 @@ Template Name: Контакты
 get_header();
 ?>
        
-    <!-- contacts -->
-    <section class="contacts">
+  <!-- contacts -->
+  <section class="contacts">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -20,9 +20,9 @@ get_header();
             <h1>КОНТАКТЫ</h1>
           </div>
           <div class="section-img">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
           </div>
           <div class="section-subtitle">
             Для заказа услуг или продукции напишите нам!
@@ -33,7 +33,7 @@ get_header();
     
     <div class="contacts-grid">
       <div class="contacts-map">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A61064b46ae6deb08acbe94166a9feefe66939f17638543ffbc20869df2608cdf&amp;width=810&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A61064b46ae6deb08acbe94166a9feefe66939f17638543ffbc20869df2608cdf&amp;width=810&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
       
       <div class="container">
@@ -45,38 +45,38 @@ get_header();
                   Контактная информация
               </h2>
               <div class="contacts-info__phone">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/phone-blue.png';?>" alt="">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/phone-blue.png';?>" alt="Телефон">
                 <div class="phone">
-                    8 (8142) 28 02 01   
+                    <a href="tel:88142280201">8 (8142) 28 02 01  </a> 
                 </div>
                 <div class="phone">
-                    8 (8142) 28 32 01
+                    <a href="tel:88142283201">8 (8142) 28 32 01</a>
                 </div>
               </div>
               <div class="contacts-info__time">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/clock-blue.png';?>" alt="">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/clock-blue.png';?>" alt="Режим работы">
                 <div class="time">
                     Пн-пт: с 9:00 до 18:00
                 </div>
               </div>
               <div class="contacts-info__map">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/map-blue.png';?>" alt="">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/map-blue.png';?>" alt="Местоположение">
                 <div class="map">
                     г. Петрозаводск, 
                     ул. Онежской флотилии, 29а
                 </div>
               </div>
               <div class="contacts-info__mail">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/mail-blue.png';?>" alt="">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/mail-blue.png';?>" alt="E-mail">
                 <div class="mail">
-                    ac-ptz@mail.ru
+                   <a href="mailto:ac-ptz@mail.ru">ac-ptz@mail.ru</a> 
                 </div>
               </div>
             </div>
           </div>
           <div class="col-12 col-xl-5">
-            <form action="" class="contacts-form">
-              <!-- <div class="contacts-form__name">
+            <!-- <form class="contacts-form">
+              <div class="contacts-form__name">
                 <label for="name">
                     Ваше имя:
                 </label>
@@ -99,9 +99,13 @@ get_header();
               </div>
               <div class="contacts-form__button">
                 <button>Отправить</button>
-              </div> -->
+              </div>
+             
+            </form> -->
+            <div class="contacts-form">
               <?php echo do_shortcode('[contact-form-7 id="680" title="Контактная форма Контакты"]'); ?>
-            </form>
+            </div>
+            
             
           </div>
         </div>

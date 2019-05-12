@@ -1,10 +1,10 @@
 <?php
 /**
- * svartechkom functions and definitions
+ * aqua-centr functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package svartechkom
+ * @package aqua-centr
  */
 
 

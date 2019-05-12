@@ -60,16 +60,16 @@ get_header();
               
                   <h1><?php the_title(); ?></h1>
                   <div class="section-img">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/drop-blue.png';?>" alt="Капля">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/wave.png';?>" alt="Волна">
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="products-category__grid">
-              <div class="row">
+              <div class="row  justify-content-center">
                 <?php 
 
                     $args = array(
@@ -95,6 +95,9 @@ get_header();
                       // формат вывода
                     //}  
                     $obj_img = get_field( "vehicle_img", get_the_ID() );
+                    if(!$obj_img) {
+                      $obj_img = get_field( "ava", get_the_ID() );
+                    }
 
 
                 ?>
@@ -102,7 +105,7 @@ get_header();
                 <div class="col-12 col-md-6 col-lg-4">
                   <div class="products-category__item">
                     <div class="products-category__item-img">
-                      <img src="<?php echo $obj_img;?>" alt="">
+                      <img src="<?php echo $obj_img;?>" alt="<?php the_title();?>">
                     </div>
                     <div class="products-category__item-title-wrapper">
                       <h2 class="products-category__item-title">
@@ -119,6 +122,9 @@ get_header();
                 <?php 
                   }
                   wp_reset_postdata();
+
+
+                 
                 ?>
               </div>
             </div>

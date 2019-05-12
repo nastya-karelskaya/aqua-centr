@@ -14,7 +14,7 @@ get_header();
        
   <!-- reviews -->
   <section class="section section-first politics">
-    <div class="container-fluid">
+    <div class="container">
       <!-- content -->
       <div class="content">
         
@@ -46,7 +46,7 @@ get_header();
         
 
        
-    </div>
+    
 
 
 
