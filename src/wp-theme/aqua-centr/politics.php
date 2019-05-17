@@ -20,6 +20,10 @@ get_header();
         
         <div class="row">
           <div class="col-12">
+            <div class="section-subtitle" style="margin-bottom:35px;margin-top:0;text-align:left;">
+              <a href="<?php echo home_url();?>">Главная / <?php echo the_title(); ?></a>
+
+            </div>
             <!-- title -->
             <div class="title">
               <h1>Политика конфиденциальности</h1>

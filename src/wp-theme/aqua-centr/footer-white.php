@@ -19,8 +19,11 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-          <div class="footer-logo">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/logo-bottom.png';?>" alt="Логотип">
+        <div class="footer-logo">
+            <a href="<?php echo home_url(); ?>">
+              <img src="<?php echo get_template_directory_uri() . '/assets/img/footer/logo-bottom.png';?>" alt="Логотип">
+            </a>
+            
           </div>
   
         </div>
@@ -117,56 +120,75 @@
 
   <script>
     function init() {
-      console.log('loaded');
 
-      //var subMenu = document.querySelector('.navbar li.menu-item-has-children a');
+$(".navbar-nav > li.menu-item-has-children > a").on("mouseover", function(){
+  if( $(window).width() > 991 ) {
 
-      //console.log('submenu'+subMenu);
-
+    $activeSubMenu = $(".navbar-nav > li.menu-item-has-children > a.current");
+  
+    if($activeSubMenu) {      
       
-      // var submenuItem = subMenu.querySelector('.sub-menu');
-
-      // if( submenuItems.length != 0) {
-      //   for(var i=0; i<submenuItems.length; i++) {
-      //     if(submenuItems[i] != null) {
-            // submenuItems[i].addEventListener('mouseover', function(event) {
-            //   subMenu.addEventListener('mouseover', function(event) {
-            //   console.log('item ');
-            //   var subMenuItem = this.nextSibling;
-            //   console.log(subMenuItem);
-            //   subMenuItem.style.display = 'block';
-            //   //this.style.display = block;
-            // });
-      //     }
-      //   }
-      // }
-      // else {
-      //   console.log('no li items found');
-      // }
-
-        $(".navbar li.menu-item-has-children a").on("mouseover", function(){
-        //быстро изменяем стиль display
-          // $(this).siblings(".sub-menu").css({'display' : 'block'});
-          $(this).siblings(".sub-menu").addClass('active');
-        });
-
-        // $(".navbar li.menu-item-has-children").on("mouseleave", function(){
-        // //быстро изменяем стиль display
-        //   $(this).find(".sub-menu").css({'display' : 'none'});
-        // });
-        $(".navbar li.menu-item-has-children .sub-menu").on("mouseleave", function(){
-          console.log('mouseleave');
-        //быстро изменяем стиль display
-          $(this).css({'display' : 'none'});
-          //if($(this).hasClass("active")) {
-            $(this).removeClass("active");
-          //}
-          
-
-
-        });
-
+      $activeSubMenu.siblings(".sub-menu").css({'display' : 'none'});
+      $activeSubMenu.removeClass("current");
+      
     }
+     
+      $(this).siblings(".sub-menu").css({'display' : 'block'});
+      $(this).addClass('clicked');
+      $(this).addClass('current');
+      
+  }
+
+});
+
+$(".navbar-nav > li.menu-item-has-children > a").on("mouseleave", function(){
+  if( $(window).width() > 991 ) {
+
+  $clickedSubMenu = $(".navbar-nav > li.menu-item-has-children > a.clicked");
+
+    
+    if(!$clickedSubMenu.hasClass("current")) {
+      
+      $(this).siblings(".sub-menu").css({'display' : 'none'});
+      $(this).removeClass('clicked');
+      $(this).removeClass('current');
+     
+    }
+
+
+    
+  }
+
+});
+
+
+$(".navbar-nav > li.menu-item-has-children > .sub-menu > li.menu-item-has-children").on("mouseover", function(){
+  if( $(window).width() > 991) {
+    
+    $(this).find("ul.sub-menu").css({'display' : 'block'});
+
+
+  }
+  
+});
+
+$(".navbar-nav > li.menu-item-has-children > .sub-menu > li.menu-item-has-children").on("mouseleave", function(){
+  if( $(window).width() > 991) {
+    
+    
+    $(this).find("ul.sub-menu").css({'display' : 'none'});
+
+    
+  }
+  
+});
+
+$(".navbar-nav > li.menu-item-has-children > .sub-menu").on("mouseleave", function(){ 
+ 
+  $(this).css({'display' : 'none'});
+});
+
+}
 
     window.onload = init;
 

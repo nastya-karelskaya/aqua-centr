@@ -194,7 +194,7 @@ get_header();
         </button>
       </div>
       <div class="modal-body">
-        <form class="order-form">
+        <!-- <form class="order-form">
           <div class="row">
             <div class="col-12">
               <div class="order-form__name">
@@ -218,7 +218,10 @@ get_header();
           </div>
           <?php //echo do_shortcode('[contact-form-7 id="681" title="Контактная форма Карточка оборудования"]'); ?>
 
-        </form>
+        </form> -->
+        <div class="order-form">
+          <?php echo do_shortcode('[contact-form-7 id="681" title="Контактная форма Карточка оборудования"]'); ?>
+        </div>
       </div>
       
     </div>

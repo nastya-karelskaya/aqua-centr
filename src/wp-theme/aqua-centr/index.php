@@ -357,8 +357,8 @@ get_header();
       <div class="row"> -->
         <div class="col-12 col-lg-6">
           
-          <form class="order-form">
-            <div class="row">
+          <!-- <form class="order-form"> -->
+            <!-- <div class="row">
               <div class="col-12 col-md-6">
                 <div class="order-form__name">
                   <div class="order-form__name-txt">Ваше имя:</div>
@@ -378,9 +378,12 @@ get_header();
             </div>
             <div class="order-form__button">
               <input type="button" class="button" value="Заказать">
-            </div>
-            <?php //echo do_shortcode('[contact-form-7 id="679" title="Контактная форма Главная"]'); ?>
-          </form>
+            </div> -->
+            <?php //echo do_shortcode('[contact-form-7 id="680" title="Контактная форма Контакты"]'); ?>
+          <!-- </form> -->
+          <!-- <div class="order-form"> -->
+              <?php echo do_shortcode('[contact-form-7 id="679" title="Контактная форма Главная"]'); ?>
+            <!-- </div> -->
         </div>
         <!-- <div class="col-12 col-lg-6"> -->
           

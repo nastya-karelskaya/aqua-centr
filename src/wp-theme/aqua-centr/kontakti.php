@@ -16,6 +16,45 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-12">
+        <div class="section-subtitle" style="margin-bottom:35px;margin-top:0;">
+                 <a href="<?php echo home_url();?>">Главная</a>
+                  <?php 
+                    $hole_page_url = get_the_permalink(); //get_site_url( get_the_ID()); 
+                    $hole_page_pieces_all = explode("//", $hole_page_url);
+                    $hole_page_pieces_raw = explode("/", $hole_page_pieces_all[1]);
+                    $hole_page_pieces = array_diff($hole_page_pieces_raw, array(''));
+                  
+                    $link = '';//home_url();
+                    $page = '';
+                    $sub_link = '';
+
+                    for($i=1; $i<count($hole_page_pieces); $i++) {
+                      if($hole_page_pieces[$i] && (($i + 1) != (count($hole_page_pieces)) )) {
+
+                      
+                      $link .= '/' . $hole_page_pieces[$i];
+                      $sub_link .= $hole_page_pieces[$i] . '/';
+                      $page = get_page_by_path( $sub_link, OBJECT );
+
+                  ?>
+                      / <a href="<?php echo $link;?>">
+                        <?php echo $page->post_title;?>
+                      </a>
+
+                  <?php  
+                      }  
+                      else 
+                      {
+                  ?>
+                  / <?php the_title(); ?>
+                  <?php     
+
+                      }
+                    }
+
+                ?>
+
+                </div>
           <div class="section-title">
             <h1>КОНТАКТЫ</h1>
           </div>

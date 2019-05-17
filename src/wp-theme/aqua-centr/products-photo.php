@@ -13,7 +13,7 @@ get_header();
  <section class="products-category">
     <div class="container">
       <div class="row">
-        <div class="col-9">
+        <div class="col-12 col-xl-9">
           <div class="content">
             <div class="row">
               <div class="col-12">
@@ -131,7 +131,7 @@ get_header();
           </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-12 col-xl-3">
           <?php wp_nav_menu( [
               'theme_location'  => 'right_products_part',
               'menu'            => '', 

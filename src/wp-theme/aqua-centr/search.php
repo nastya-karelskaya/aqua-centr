@@ -9,7 +9,10 @@
           <div class="row">
             <div class="col-12 col-xl-9">
             <div class="content">
+            <div class="section-subtitle" style="margin-bottom:35px;margin-top:0;text-align:left;">
+              <a href="<?php echo home_url();?>">Главная / Результаты поиска</a>
 
+            </div>
               <div class="section-title-left">
                 <h1>
                 Результаты поиска по запросу: "<?php echo $_GET['s'];?>"
